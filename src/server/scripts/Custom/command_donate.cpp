@@ -58,7 +58,7 @@ public:
         };
         static std::vector<ChatCommand> tokensCommandTable =
         {
-            { "info",           SEC_CONFIRMED_GAMEMASTER,         false, &HandleInfoTokensCommand,           ""},
+            { "info",           SEC_ADMINISTRATOR,         false, &HandleInfoTokensCommand,           ""},
             { "modify",         SEC_ADMINISTRATOR,         false, &HandleModTokensCommand,            ""}
         };
         static std::vector<ChatCommand> donateCommandTable =
@@ -66,7 +66,7 @@ public:
             { "morph",          SEC_PLAYER,         false, NULL,                                "", morphCommandTable },
             { "mount",          SEC_PLAYER,         false, NULL,                                "", mountCommandTable },
             { "add",            SEC_ADMINISTRATOR,  false, &HandleAddDonatCommand,              ""},
-            { "tokens",         SEC_CONFIRMED_GAMEMASTER,  false, NULL,                         "", tokensCommandTable }
+            { "tokens",         SEC_ADMINISTRATOR,  false, NULL,                         "", tokensCommandTable }
         };
         static std::vector<ChatCommand> commandTable =
         {

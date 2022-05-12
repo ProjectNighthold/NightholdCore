@@ -420,21 +420,17 @@ class VAS_AutoBalance_CommandScript : public CommandScript
 public:
     VAS_AutoBalance_CommandScript() : CommandScript("VAS_AutoBalance_CommandScript") { }
 
-    ChatCommand* GetCommands() const override
+    std::vector<ChatCommand> GetCommands() const override
     {
-        static ChatCommand vasCommandTable[] =
+        static std::vector<ChatCommand> vasCommandTable =
         {
-            { "setoffset",  SEC_GAMEMASTER, true,   &HandleVasSetOffsetCommand, "", NULL },
-            { "getoffset",  SEC_GAMEMASTER, true,   &HandleVasGetOffsetCommand, "", NULL },
-            { NULL,         0,              false,  NULL,                       "", NULL }
+            { "setoffset",  SEC_GAMEMASTER, true,   &HandleVasSetOffsetCommand, ""},
+            { "getoffset",  SEC_GAMEMASTER, true,   &HandleVasGetOffsetCommand, ""}
         };
-
-        static ChatCommand commandTable[] =
+        static std::vector<ChatCommand> commandTable =
         {
-            { "vas",    SEC_GAMEMASTER, false,  NULL,                           "", vasCommandTable },
-            { NULL,     0,              false,  NULL,                           "", NULL }
+            { "vas",    SEC_GAMEMASTER, false,  NULL,                           "", vasCommandTable }
         };
-
         return commandTable;
     }
 
