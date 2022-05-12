@@ -322,12 +322,11 @@ class cs_world_chat : public CommandScript
 public:
     cs_world_chat() : CommandScript("cs_world_chat") { }
 
-    ChatCommand* GetCommands() const
+    std::vector<ChatCommand> GetCommands() const
     {
-        static ChatCommand WorldChatCommandTable[] =
+        static std::vector<ChatCommand> WorldChatCommandTable =
         {
-            { "chat",           SEC_PLAYER,         false, &HandleWorldChatCommand,             "", NULL },
-            { NULL,             0,                  false, NULL,                                "", NULL }
+            { "chat",           SEC_PLAYER,         false, &HandleWorldChatCommand,             ""}
         };
         return WorldChatCommandTable;
     }
