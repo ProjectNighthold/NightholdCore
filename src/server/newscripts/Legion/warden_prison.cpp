@@ -1027,13 +1027,11 @@ public:
         return new npc_102391AI(creature);
     }
 
-    //! Scripted_NoMovementAI HACK!
     struct npc_102391AI : public npc_escortAI
     {
-        struct npc_102391AI : public npc_escortAI
+        npc_102391AI(Creature* creature) : npc_escortAI(creature) {}
 
         GuidSet m_player_for_event;
-
         ObjectGuid leftAdd;
         ObjectGuid rightAdd;
         ObjectGuid bossGUID = ObjectGuid::Create<HighGuid::Creature>(me->GetMapId(), 96680, 365929);
@@ -1099,10 +1097,10 @@ public:
 
             if (!me->IsWithinDistInMap(who, 50.0f))
                 return;
-            
+
             if (who->ToPlayer()->GetQuestStatus(39684) == QUEST_STATUS_INCOMPLETE)
                 Talk(TEXT_GENERIC_0, who->GetGUID());
-            
+
             m_player_for_event.insert(who->GetGUID());
         }
 
@@ -1445,8 +1443,8 @@ void AddSC_warden_prison()
     new npc_92718();
     new spell_199760();
     new npc_102391();
-	new spell_196460();
-	new spell_196462();
+    new spell_196460();
+    new spell_196462();
     new npc_q38672();
     new go_244923();
     new npc_96665();
