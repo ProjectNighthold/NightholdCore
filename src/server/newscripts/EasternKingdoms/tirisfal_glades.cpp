@@ -161,18 +161,22 @@ class player_undead_start_zone : public PlayerScript
 {
     public:
         player_undead_start_zone() : PlayerScript("player_undead_start_zone") {}
-
-          uint32 timer_for_check;
-
-       void OnUpdate(Player* player, uint32 diff)
+       
+  	    uint32 timer_for_check;
+        
+       void OnLogin(Player* player, bool firstLogin) override
+    {
+        timer_for_check = 200;
+    }
+    
+    void OnUpdate(Player* player, uint32 diff)
     { 
-        if (!player  player->isGameMaster())
+        if (!player || player->isGameMaster())
             return;
-
+        
         if (timer_for_check <= diff)
-        {
-            if (player->GetCurrentAreaID() == AllowedArea  player->GetCurrentZoneID() == AllowedZone)
-            {
+
+
                   if (player->getRace() == RACE_UNDEAD_PLAYER)
                     {
                         player->CastSpell(player, 73523); //spell fake death
@@ -180,7 +184,7 @@ class player_undead_start_zone : public PlayerScript
                     }
 
             }
-            timer_for_check = 2000;
+            timer_for_check = 200;
         }
         else
             timer_for_check -= diff;
