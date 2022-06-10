@@ -157,8 +157,39 @@ class spell_summon_darnel_q26800 : public AuraScript
     }
 };
 
+class player_undead_start_zone : public PlayerScript
+{
+    public:
+        player_undead_start_zone() : PlayerScript("player_undead_start_zone") {}
+
+          uint32 timer_for_check;
+
+       void OnUpdate(Player* player, uint32 diff)
+    { 
+        if (!player  player->isGameMaster())
+            return;
+
+        if (timer_for_check <= diff)
+        {
+            if (player->GetCurrentAreaID() == AllowedArea  player->GetCurrentZoneID() == AllowedZone)
+            {
+                  if (player->getRace() == RACE_UNDEAD_PLAYER)
+                    {
+                        player->CastSpell(player, 73523); //spell fake death
+                        ChatHandler(player).PSendSysMessage("MANCO EL QUE LO LEA");
+                    }
+
+            }
+            timer_for_check = 2000;
+        }
+        else
+            timer_for_check -= diff;
+    }
+};
+
 void AddSC_tirisfal_glades()
 {
+	RegisterCreatureAI(player_undead_start_zone);
     RegisterCreatureAI(npc_darnel_q26800);
     RegisterCreatureAI(npc_scarlet_corpse_q26800);
     RegisterCreatureAI(npc_deathguard_saltain);
