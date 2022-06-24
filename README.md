@@ -11,7 +11,9 @@ Project Nighthold Core
 
 ## Introduction
 
-NightholdCore is an *MMORPG* Framework for Legion 7.3.5 (26972) based on the uwow.biz core that was leaked in early 2020.
+NightholdCore is an *MMORPG* Framework for Legion 7.3.5 (26972) based on the uwow.biz core that was leaked in early 2020,
+this core and code has passed hand to hand to much people, even greedy people sell it (something not correct because if
+the base code is under GPL laws, you must share any change you make in it, thats the reason i can share it).
 
 NightholdCore itself has been created from an old version of TrinityCore, and is a *MMORPG* Framework based mostly in C++.
 
