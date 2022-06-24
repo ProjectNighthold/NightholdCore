@@ -1,0 +1,188 @@
+/*
+ *###############################################################################
+ *#                                                                             #
+ *# Copyright (C) 2022 Project Nighthold <https://github.com/ProjectNighthold>  #
+ *#                                                                             #
+ *# This file is free software; as a special exception the author gives         #
+ *# unlimited permission to copy and/or distribute it, with or without          #
+ *# modifications, as long as this notice is preserved.                         #
+ *#                                                                             #
+ *# This program is distributed in the hope that it will be useful, but         #
+ *# WITHOUT ANY WARRANTY, to the extent permitted by law; without even the      #
+ *# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.    #
+ *#                                                                             #
+ *# Read the THANKS file on the source root directory for more info.            #
+ *#                                                                             #
+ *###############################################################################
+ */
+
+#include "violet_hold.h"
+
+enum Spells
+{
+    SPELL_ARCANE_VACUUM                         = 58694,
+    SPELL_BLIZZARD                              = 58693,
+    H_SPELL_BLIZZARD                            = 59369,
+    SPELL_MANA_DESTRUCTION                      = 59374,
+    SPELL_TAIL_SWEEP                            = 58690,
+    H_SPELL_TAIL_SWEEP                          = 59283,
+    SPELL_UNCONTROLLABLE_ENERGY                 = 58688,
+    H_SPELL_UNCONTROLLABLE_ENERGY               = 59281,
+    SPELL_TRANSFORM                             = 58668
+};
+
+enum Yells
+{
+    SAY_AGGRO                                   = 0,
+    SAY_SLAY                                    = 1,
+    SAY_DEATH                                   = 2,
+    SAY_SPAWN                                   = 3,
+    SAY_DISRUPTION                              = 4,
+    SAY_BREATH_ATTACK                           = 5,
+    SAY_SPECIAL_ATTACK                          = 6
+};
+
+class boss_cyanigosa : public CreatureScript
+{
+public:
+    boss_cyanigosa() : CreatureScript("boss_cyanigosa") { }
+
+    CreatureAI* GetAI(Creature* creature) const override
+    {
+        return new boss_cyanigosaAI (creature);
+    }
+
+    struct boss_cyanigosaAI : public ScriptedAI
+    {
+        boss_cyanigosaAI(Creature* creature) : ScriptedAI(creature)
+        {
+            instance = creature->GetInstanceScript();
+        }
+
+        uint32 uiArcaneVacuumTimer;
+        uint32 uiBlizzardTimer;
+        uint32 uiManaDestructionTimer;
+        uint32 uiTailSweepTimer;
+        uint32 uiUncontrollableEnergyTimer;
+
+        InstanceScript* instance;
+
+        void Reset() override
+        {
+            uiArcaneVacuumTimer = 10000;
+            uiBlizzardTimer = 15000;
+            uiManaDestructionTimer = 30000;
+            uiTailSweepTimer = 20000;
+            uiUncontrollableEnergyTimer = 25000;
+            if (instance)
+                instance->SetData(DATA_CYANIGOSA_EVENT, NOT_STARTED);
+        }
+
+        void EnterCombat(Unit* /*who*/) override
+        {
+            Talk(SAY_AGGRO);
+
+            if (instance)
+                instance->SetData(DATA_CYANIGOSA_EVENT, IN_PROGRESS);
+        }
+
+        void MoveInLineOfSight(Unit* /*who*/) override { }
+
+
+        void UpdateAI(uint32 diff) override
+        {
+            if (instance && instance->GetData(DATA_REMOVE_NPC) == 1)
+            {
+                me->DespawnOrUnsummon();
+                instance->SetData(DATA_REMOVE_NPC, 0);
+            }
+
+            //Return since we have no target
+            if (!UpdateVictim())
+                return;
+
+            if (uiArcaneVacuumTimer <= diff)
+            {
+                DoCast(SPELL_ARCANE_VACUUM);
+                uiArcaneVacuumTimer = 10000;
+            } else uiArcaneVacuumTimer -= diff;
+
+            if (uiBlizzardTimer <= diff)
+            {
+                if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 0, 100, true))
+                    DoCast(target, SPELL_BLIZZARD);
+                uiBlizzardTimer = 15000;
+            } else uiBlizzardTimer -= diff;
+
+            if (uiTailSweepTimer <= diff)
+            {
+                DoCast(SPELL_TAIL_SWEEP);
+                uiTailSweepTimer = 20000;
+            } else uiTailSweepTimer -= diff;
+
+            if (uiUncontrollableEnergyTimer <= diff)
+            {
+                DoCastVictim(SPELL_UNCONTROLLABLE_ENERGY);
+                uiUncontrollableEnergyTimer = 25000;
+            } else uiUncontrollableEnergyTimer -= diff;
+
+            if (IsHeroic())
+            {
+                if (uiManaDestructionTimer <= diff)
+                {
+                    if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 0, 100, true))
+                        DoCast(target, SPELL_MANA_DESTRUCTION);
+                    uiManaDestructionTimer = 30000;
+                } else uiManaDestructionTimer -= diff;
+            }
+
+            DoMeleeAttackIfReady();
+        }
+
+        void JustDied(Unit* /*killer*/) override
+        {
+            Talk(SAY_DEATH);
+            
+            if (instance)
+                instance->SetData(DATA_CYANIGOSA_EVENT, DONE);
+        }
+
+        void KilledUnit(Unit* victim) override
+        {
+            if (victim->GetTypeId() != TYPEID_PLAYER)
+                return;
+
+            Talk(SAY_SLAY);
+        }
+    };
+
+};
+
+class achievement_defenseless : public AchievementCriteriaScript
+{
+    public:
+        achievement_defenseless() : AchievementCriteriaScript("achievement_defenseless")
+        {
+        }
+
+        bool OnCheck(Player* /*player*/, Unit* target) override
+        {
+            if (!target)
+                return false;
+
+            InstanceScript* instance = target->GetInstanceScript();
+            if (!instance)
+                return false;
+
+            if (!instance->GetData(DATA_DEFENSELESS))
+                return false;
+
+            return true;
+        }
+};
+
+void AddSC_boss_cyanigosa()
+{
+    new boss_cyanigosa();
+    new achievement_defenseless();
+}
