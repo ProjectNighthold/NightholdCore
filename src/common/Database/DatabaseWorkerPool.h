@@ -77,7 +77,7 @@ public:
         delete _queue;
     }
 
-	bool DatabaseWorkerPool<T>::PrepareStatements()
+	bool PrepareStatements()
 	{
 		for (auto& connections : _connections)
 			for (auto& connection : connections)
@@ -97,7 +97,7 @@ public:
 	}
 
 
-	void DatabaseWorkerPool<T>::SetConnectionInfo(std::string const& infoString,
+	void SetConnectionInfo(std::string const& infoString,
 		uint8 const asyncThreads, uint8 const synchThreads)
 	{
 		_connectionInfo = MySQLConnectionInfo(infoString);

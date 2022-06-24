@@ -20,6 +20,7 @@
 #include "SpellAuras.h"
 #include "SpellAuraEffects.h"
 #include "Spell.h"
+#include "Configuration/Config.h"
 
 #define ACHIEVEMENT_FIRE_DANCING 271
 #define ACHIEVEMENT_TORCH_JUGGLER 272
