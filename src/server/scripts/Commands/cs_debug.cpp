@@ -52,115 +52,107 @@ class debug_commandscript : public CommandScript
 public:
     debug_commandscript() : CommandScript("debug_commandscript") { }
 
-    ChatCommand* GetCommands() const override
+    std::vector<ChatCommand> GetCommands() const override
     {
-        static ChatCommand debugPlayCommandTable[] =
+        static std::vector<ChatCommand> debugPlayCommandTable =
         {
-            { "cinematic",      SEC_BUGTRACKER,      false, &HandleDebugPlayCinematicCommand,   "", NULL },
-            { "movie",          SEC_BUGTRACKER,      false, &HandleDebugPlayMovieCommand,       "", NULL },
-            { "sound",          SEC_BUGTRACKER,      false, &HandleDebugPlaySoundCommand,       "", NULL },
-            { NULL,             SEC_PLAYER,     false, NULL,                               "", NULL }
+            { "cinematic",      SEC_MODERATOR,      false, &HandleDebugPlayCinematicCommand,   ""},
+            { "movie",          SEC_MODERATOR,      false, &HandleDebugPlayMovieCommand,       ""},
+            { "sound",          SEC_MODERATOR,      false, &HandleDebugPlaySoundCommand,       ""}
         };
-        static ChatCommand debugSendCommandTable[] =
+        static std::vector<ChatCommand> debugSendCommandTable =
         {
-            { "buyerror",       SEC_DEVELOPER,  false, &HandleDebugSendBuyErrorCommand,       "", NULL },
-            { "channelnotify",  SEC_DEVELOPER,  false, &HandleDebugSendChannelNotifyCommand,  "", NULL },
-            { "chatmmessage",   SEC_DEVELOPER,  false, &HandleDebugSendChatMsgCommand,        "", NULL },
-            { "compress",       SEC_DEVELOPER,  false, &HandleDebugSendCompressCommand,       "", NULL },
-            { "equiperror",     SEC_DEVELOPER,  false, &HandleDebugSendEquipErrorCommand,     "", NULL },
-            { "largepacket",    SEC_DEVELOPER,  false, &HandleDebugSendLargePacketCommand,    "", NULL },
-            { "multi",          SEC_DEVELOPER,  false, &HandleDebugSendMultCommand,           "", NULL },
-            { "opcode",         SEC_DEVELOPER,  false, &HandleDebugSendOpcodeCommand,         "", NULL },
-            { "qinvalidmsg",    SEC_DEVELOPER,  false, &HandleDebugSendQuestInvalidMsgCommand, "", NULL },
-            { "qpartymsg",      SEC_DEVELOPER,  false, &HandleDebugSendQuestPartyMsgCommand,  "", NULL },
-            { "sellerror",      SEC_DEVELOPER,  false, &HandleDebugSendSellErrorCommand,      "", NULL },
-            { "setphaseshift",  SEC_DEVELOPER,  false, &HandleDebugSendSetPhaseShiftCommand,  "", NULL },
-            { "spellfail",      SEC_DEVELOPER,  false, &HandleDebugSendSpellFailCommand,      "", NULL },
-            { "sendLfgListStatus", SEC_BUGTRACKER,  false, &HandleDebugSendLFGListStatusUpdate, "", NULL },
-            
-            { NULL,             SEC_PLAYER,         false, NULL,                                  "", NULL }
+            { "buyerror",       SEC_ADMINISTRATOR,  false, &HandleDebugSendBuyErrorCommand,       ""},
+            { "channelnotify",  SEC_ADMINISTRATOR,  false, &HandleDebugSendChannelNotifyCommand,  ""},
+            { "chatmmessage",   SEC_ADMINISTRATOR,  false, &HandleDebugSendChatMsgCommand,        ""},
+            { "compress",       SEC_ADMINISTRATOR,  false, &HandleDebugSendCompressCommand,       ""},
+            { "equiperror",     SEC_ADMINISTRATOR,  false, &HandleDebugSendEquipErrorCommand,     ""},
+            { "largepacket",    SEC_ADMINISTRATOR,  false, &HandleDebugSendLargePacketCommand,    ""},
+            { "multi",          SEC_ADMINISTRATOR,  false, &HandleDebugSendMultCommand,           ""},
+            { "opcode",         SEC_ADMINISTRATOR,  false, &HandleDebugSendOpcodeCommand,         ""},
+            { "qinvalidmsg",    SEC_ADMINISTRATOR,  false, &HandleDebugSendQuestInvalidMsgCommand, ""},
+            { "qpartymsg",      SEC_ADMINISTRATOR,  false, &HandleDebugSendQuestPartyMsgCommand,  ""},
+            { "sellerror",      SEC_ADMINISTRATOR,  false, &HandleDebugSendSellErrorCommand,      ""},
+            { "setphaseshift",  SEC_ADMINISTRATOR,  false, &HandleDebugSendSetPhaseShiftCommand,  ""},
+            { "spellfail",      SEC_ADMINISTRATOR,  false, &HandleDebugSendSpellFailCommand,      ""},
+            { "snedLfgListStatus", SEC_ADMINISTRATOR,  false, &HandleDebugSendLFGListStatusUpdate, ""}
         };
-        
-        static ChatCommand debugGarrisonCommandTable[] =
+        static std::vector<ChatCommand> debugGarrisonCommandTable =
         {
-            { "generatemissions",   SEC_DEVELOPER,  false, &HandleHenerateMissionsCommand,      "", nullptr },
-            { nullptr,              SEC_PLAYER,     false, nullptr,                             "", nullptr }
+            { "generatemissions",   SEC_MODERATOR,  false, &HandleHenerateMissionsCommand,      ""}
         };
-        
-        static ChatCommand debugCommandTable[] =
+        static std::vector<ChatCommand> debugCommandTable =
         {
-            { "anim",           SEC_BUGTRACKER,     false, &HandleDebugAnimCommand,            "", NULL },
-            { "areatriggers",   SEC_ADMINISTRATOR,  false, &HandleDebugAreaTriggersCommand,    "", NULL },
-            { "arena",          SEC_GAMEMASTER,   false, &HandleDebugArenaCommand,           "", NULL },
-            { "attackpower",    SEC_ADMINISTRATOR,   false, &HandleDebugModifyAttackpowerCommand,    "", NULL },
-            { "backward",       SEC_BUGTRACKER,   false, &HandleDebugMoveBackward,           "", NULL },
-            { "bg",             SEC_BUGTRACKER,   false, &HandleDebugBattlegroundCommand,    "", NULL },
-            { "ashran",         SEC_GAMEMASTER,   false, &HandleDebugAshranCommand,          "", NULL },
-            { "lfg",            SEC_GAMEMASTER,   false, &HandleDebugLFGCommand,             "", NULL},
-            { "challenge",      SEC_GAMEMASTER,   false, &HandleDebugChallengeCommand,       "", NULL },
-            { "crit",           SEC_ADMINISTRATOR,   false, &HandleDebugModifyCritChanceCommand,     "", NULL },
-            { "entervehicle",   SEC_ADMINISTRATOR,  false, &HandleDebugEnterVehicleCommand,    "", NULL },
-            { "getdynamicvalue",SEC_DEVELOPER,  false, &HandleDebugGetDynamicValueCommand, "", NULL },
-            { "getitemstate",   SEC_ADMINISTRATOR,  false, &HandleDebugGetItemStateCommand,    "", NULL },
-            { "getitemvalue",   SEC_ADMINISTRATOR,  false, &HandleDebugGetItemValueCommand,    "", NULL },
-            { "getvalue",       SEC_ADMINISTRATOR,  false, &HandleDebugGetValueCommand,        "", NULL },
-            { "haste",          SEC_ADMINISTRATOR,   false, &HandleDebugModifyHasteCommand,     "", NULL },
-            { "hit",            SEC_ADMINISTRATOR,   false, &HandleDebugModifyHitCommand,       "", NULL },
-            { "versality",      SEC_ADMINISTRATOR,   false, &HandleDebugModifyVersalityCommand, "", NULL },
-            { "hostile",        SEC_GAMEMASTER,   false, &HandleDebugHostileRefListCommand,  "", NULL },
-            { "itemexpire",     SEC_ADMINISTRATOR,  false, &HandleDebugItemExpireCommand,      "", NULL },
-            { "jump",           SEC_BUGTRACKER,  false, &HandleDebugMoveJump,               "", NULL },
-            { "load_z",         SEC_ADMINISTRATOR,  false, &HandleDebugLoadZ,                  "", NULL },
-            { "lootrecipient",  SEC_GAMEMASTER,     false, &HandleDebugGetLootRecipientCommand, "", NULL },
-            { "los",            SEC_BUGTRACKER,      false, &HandleDebugLoSCommand,             "", NULL },
-            { "mailstatus",     SEC_ADMINISTRATOR,  false, &HandleSendMailStatus,              "", NULL },
-            { "mapinfo",        SEC_ADMINISTRATOR,  false, &HandleDebugGetMapInfoCommand,      "", NULL },
-            { "mastery",        SEC_ADMINISTRATOR,   false, &HandleDebugModifyMasteryCommand,        "", NULL },
-            { "mod32value",     SEC_ADMINISTRATOR,  false, &HandleDebugMod32ValueCommand,      "", NULL },
-            { "moveflags",      SEC_ADMINISTRATOR,  false, &HandleDebugMoveflagsCommand,       "", NULL },
-            { "phase",          SEC_BUGTRACKER,      false, &HandleDebugPhaseCommand,           "", NULL },
+            { "anim",           SEC_GAMEMASTER,     false, &HandleDebugAnimCommand,            ""},
+            { "areatriggers",   SEC_ADMINISTRATOR,  false, &HandleDebugAreaTriggersCommand,    ""},
+            { "arena",          SEC_GAMEMASTER,   false, &HandleDebugArenaCommand,           ""},
+            { "attackpower",    SEC_GAMEMASTER,   false, &HandleDebugModifyAttackpowerCommand,    ""},
+            { "backward",       SEC_GAMEMASTER,   false, &HandleDebugMoveBackward,           ""},
+            { "bg",             SEC_GAMEMASTER,   false, &HandleDebugBattlegroundCommand,    ""},
+            { "ashran",         SEC_GAMEMASTER,   false, &HandleDebugAshranCommand,          ""},
+            { "lfg",            SEC_GAMEMASTER,   false, &HandleDebugLFGCommand,             ""},
+            { "challenge",      SEC_GAMEMASTER,   false, &HandleDebugChallengeCommand,       ""},
+            { "crit",           SEC_GAMEMASTER,   false, &HandleDebugModifyCritChanceCommand,     ""},
+            { "entervehicle",   SEC_ADMINISTRATOR,  false, &HandleDebugEnterVehicleCommand,    ""},
+            { "getdynamicvalue",SEC_ADMINISTRATOR,  false, &HandleDebugGetDynamicValueCommand, ""},
+            { "getitemstate",   SEC_ADMINISTRATOR,  false, &HandleDebugGetItemStateCommand,    ""},
+            { "getitemvalue",   SEC_ADMINISTRATOR,  false, &HandleDebugGetItemValueCommand,    ""},
+            { "getvalue",       SEC_ADMINISTRATOR,  false, &HandleDebugGetValueCommand,        ""},
+            { "haste",          SEC_GAMEMASTER,   false, &HandleDebugModifyHasteCommand,     ""},
+            { "hit",            SEC_GAMEMASTER,   false, &HandleDebugModifyHitCommand,       ""},
+            { "versality",      SEC_GAMEMASTER,   false, &HandleDebugModifyVersalityCommand, ""},
+            { "hostile",        SEC_GAMEMASTER,   false, &HandleDebugHostileRefListCommand,  ""},
+            { "itemexpire",     SEC_ADMINISTRATOR,  false, &HandleDebugItemExpireCommand,      ""},
+            { "jump",           SEC_ADMINISTRATOR,  false, &HandleDebugMoveJump,               ""},
+            { "load_z",         SEC_ADMINISTRATOR,  false, &HandleDebugLoadZ,                  ""},
+            { "lootrecipient",  SEC_GAMEMASTER,     false, &HandleDebugGetLootRecipientCommand, ""},
+            { "los",            SEC_MODERATOR,      false, &HandleDebugLoSCommand,             ""},
+            { "mailstatus",     SEC_ADMINISTRATOR,  false, &HandleSendMailStatus,              ""},
+            { "mapinfo",        SEC_ADMINISTRATOR,  false, &HandleDebugGetMapInfoCommand,      ""},
+            { "mastery",        SEC_GAMEMASTER,   false, &HandleDebugModifyMasteryCommand,        ""},
+            { "mod32value",     SEC_ADMINISTRATOR,  false, &HandleDebugMod32ValueCommand,      ""},
+            { "moveflags",      SEC_ADMINISTRATOR,  false, &HandleDebugMoveflagsCommand,       ""},
+            { "phase",          SEC_MODERATOR,      false, &HandleDebugPhaseCommand,           ""},
             { "play",           SEC_BUGTRACKER,      false, NULL,              "", debugPlayCommandTable },
             { "send",           SEC_ADMINISTRATOR,  false, NULL,              "", debugSendCommandTable },
-            { "setaurastate",   SEC_ADMINISTRATOR,  false, &HandleDebugSetAuraStateCommand,    "", NULL },
-            { "setbit",         SEC_ADMINISTRATOR,  false, &HandleDebugSet32BitCommand,        "", NULL },
-            { "setdynamicvalue",SEC_ADMINISTRATOR,  false, &HandleDebugSetDynamicValueCommand, "", NULL },
-            { "setitemvalue",   SEC_ADMINISTRATOR,  false, &HandleDebugSetItemValueCommand,    "", NULL },
-            { "setvalue",       SEC_ADMINISTRATOR,  false, &HandleDebugSetValueCommand,        "", NULL },
-            { "battlepeterror", SEC_ADMINISTRATOR,  false, &HandleDebugBattlePetErrorCommand, "", NULL },
-            { "battlepeterequestfailed", SEC_ADMINISTRATOR,  false, &HandleDebugBattlePetRequestFailedCommand, "", NULL },
-            { "setvid",         SEC_ADMINISTRATOR,  false, &HandleDebugSetVehicleIdCommand,    "", NULL },
-            { "spawnvehicle",   SEC_ADMINISTRATOR,  false, &HandleDebugSpawnVehicleCommand,    "", NULL },
-            { "spellpower",     SEC_ADMINISTRATOR,   false, &HandleDebugModifySpellpowerCommand,     "", NULL },
-            { "threat",         SEC_ADMINISTRATOR,  false, &HandleDebugThreatListCommand,      "", NULL },
-            { "tradestatus",    SEC_ADMINISTRATOR,  false, &HandleSendTradeStatus,             "", NULL },
-            { "update",         SEC_ADMINISTRATOR,  false, &HandleDebugUpdateCommand,          "", NULL },
-            { "updatecriteria", SEC_ADMINISTRATOR,  false, &HandleDebugUpdateCriteriaCommand,  "", NULL },
-            { "uws",            SEC_ADMINISTRATOR,  false, &HandleDebugUpdateWorldStateCommand, "", NULL },
-            { "streamingmovies",SEC_ADMINISTRATOR,  false, &HandleDebugStreamingMoviesCommand,  "", NULL },
-            { "movementinfo",   SEC_ADMINISTRATOR,  false, &HandleDebugMovementInfo,           "", nullptr },
-            { "session",        SEC_ADMINISTRATOR,  false, &HandleDebugSession,                "", nullptr },
-            { "pvpstatenable",  SEC_ADMINISTRATOR,  false, &HandleDebugPvPStatEnable,          "", nullptr },
-            { "pvpstatdisable", SEC_ADMINISTRATOR,  false, &HandleDebugPvPStatDisable,         "", nullptr },
-            { "challengeloot",  SEC_GAMEMASTER,   false, &HandleDebugChallengeLootCommand,   "", NULL },
-            { "group",          SEC_GAMEMASTER,   false, &HandleDebugGroupCommand,           "", NULL },
-            { "pvpmystic",      SEC_ADMINISTRATOR, false, &HandleDebugPvpMysticCommand, "", NULL},
-            { "crash",          SEC_ADMINISTRATOR,  false, &HandleDebugCrash,                  "", nullptr },
-            { "freeze",         SEC_ADMINISTRATOR,  false, &HandleDebugFreeze,                 "", nullptr },
-            { "combat",         SEC_ADMINISTRATOR,  false, &HandleDebugPlayerCombat,           "", nullptr },
+            { "setaurastate",   SEC_ADMINISTRATOR,  false, &HandleDebugSetAuraStateCommand,    ""},
+            { "setbit",         SEC_ADMINISTRATOR,  false, &HandleDebugSet32BitCommand,        ""},
+            { "setdynamicvalue",SEC_ADMINISTRATOR,  false, &HandleDebugSetDynamicValueCommand, ""},
+            { "setitemvalue",   SEC_ADMINISTRATOR,  false, &HandleDebugSetItemValueCommand,    ""},
+            { "setvalue",       SEC_ADMINISTRATOR,  false, &HandleDebugSetValueCommand,        ""},
+            { "battlepeterror", SEC_ADMINISTRATOR,  false, &HandleDebugBattlePetErrorCommand, ""},
+            { "battlepeterequestfailed", SEC_ADMINISTRATOR,  false, &HandleDebugBattlePetRequestFailedCommand, ""},
+            { "setvid",         SEC_ADMINISTRATOR,  false, &HandleDebugSetVehicleIdCommand,    ""},
+            { "spawnvehicle",   SEC_ADMINISTRATOR,  false, &HandleDebugSpawnVehicleCommand,    ""},
+            { "spellpower",     SEC_GAMEMASTER,   false, &HandleDebugModifySpellpowerCommand,     ""},
+            { "threat",         SEC_ADMINISTRATOR,  false, &HandleDebugThreatListCommand,      ""},
+            { "tradestatus",    SEC_ADMINISTRATOR,  false, &HandleSendTradeStatus,             ""},
+            { "update",         SEC_ADMINISTRATOR,  false, &HandleDebugUpdateCommand,          ""},
+            { "updatecriteria", SEC_ADMINISTRATOR,  false, &HandleDebugUpdateCriteriaCommand,  ""},
+            { "uws",            SEC_ADMINISTRATOR,  false, &HandleDebugUpdateWorldStateCommand, ""},
+            { "streamingmovies",SEC_ADMINISTRATOR,  false, &HandleDebugStreamingMoviesCommand,  ""},
+            { "movementinfo",   SEC_ADMINISTRATOR,  false, &HandleDebugMovementInfo,           ""},
+            { "session",        SEC_ADMINISTRATOR,  false, &HandleDebugSession,                ""},
+            //{ "pvpstatenable",  SEC_ADMINISTRATOR,  false, &HandleDebugPvPStatEnable,          ""},
+            //{ "pvpstatdisable", SEC_ADMINISTRATOR,  false, &HandleDebugPvPStatDisable,         ""},
+            { "challengeloot",  SEC_GAMEMASTER,   false, &HandleDebugChallengeLootCommand,   ""},
+            { "group",          SEC_GAMEMASTER,   false, &HandleDebugGroupCommand,           ""},
+            { "pvpmystic",      SEC_ADMINISTRATOR, false, &HandleDebugPvpMysticCommand, ""},
+            { "crash",          SEC_ADMINISTRATOR,  false, &HandleDebugCrash,                  ""},
+            { "freeze",         SEC_ADMINISTRATOR,  false, &HandleDebugFreeze,                 ""},
+            { "combat",         SEC_ADMINISTRATOR,  false, &HandleDebugPlayerCombat,           ""},
             { "garrison",       SEC_ADMINISTRATOR,  false, nullptr,                             "", debugGarrisonCommandTable },
-            { "transport",      SEC_ADMINISTRATOR,  false, &HandleDebugStartTransport,         "", nullptr },
-            { "setelevel",      SEC_ADMINISTRATOR,  false, &HandleDebugSetEffectiveLevel,      "", nullptr },
-            { "pvelogs",        SEC_ADMINISTRATOR,  false, &HandleDebugPvELogsCommand,         "", nullptr },
-            { "setkillpoints",  SEC_ADMINISTRATOR,     false, &HandleDebugKillPointsCommand,      "", nullptr },
-            { "abort",          SEC_ADMINISTRATOR,     false, &HandleDebugAbort,                  "", nullptr },
-            { "exception",      SEC_ADMINISTRATOR,     false, &HandleDebugException,              "", nullptr },
-            { NULL,             SEC_PLAYER,         false, NULL,                               "", NULL }
+            { "transport",      SEC_ADMINISTRATOR,  false, &HandleDebugStartTransport,         ""},
+            { "setelevel",      SEC_ADMINISTRATOR,  false, &HandleDebugSetEffectiveLevel,      ""},
+            { "pvelogs",        SEC_ADMINISTRATOR,  false, &HandleDebugPvELogsCommand,         ""},
+            { "setkillpoints",  SEC_GAMEMASTER,     false, &HandleDebugKillPointsCommand,      ""},
+            { "abort",          SEC_GAMEMASTER,     false, &HandleDebugAbort,                  ""},
+            { "exception",      SEC_GAMEMASTER,     false, &HandleDebugException,              ""}
         };
-        static ChatCommand commandTable[] =
+        static std::vector<ChatCommand> commandTable =
         {
             { "debug",          SEC_BUGTRACKER,      true,  NULL,                  "", debugCommandTable },
-            { "wpgps",          SEC_ADMINISTRATOR,  false, &HandleWPGPSCommand,                "", NULL },
-            { NULL,             SEC_PLAYER,         false, NULL,                  "",              NULL }
+            { "wpgps",          SEC_ADMINISTRATOR,  false, &HandleWPGPSCommand,                ""}
         };
         return commandTable;
     }

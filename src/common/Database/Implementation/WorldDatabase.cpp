@@ -99,4 +99,7 @@ void WorldDatabaseConnection::DoPrepareStatements()
 
     PrepareStatement(WORLD_SEL_CHARACTER_TEMPLATES, "SELECT ID, Name, Description, level, ilevel, fromID FROM character_template", CONNECTION_SYNCH);
     PrepareStatement(WORLD_SEL_CHARACTER_TEMPLATE_CLASSES, "SELECT FactionGroup, Class, X, Y, Z, O, MapID, Money, RaceMask FROM character_template_class WHERE TemplateID = ?", CONNECTION_SYNCH);
+	
+	PrepareStatement(WORLD_INS_CREATURE_ADDON_EMOTESTATE, "REPLACE INTO creature_addon(guid, emote) VALUES (?, ?)", CONNECTION_ASYNC);
+    PrepareStatement(WORLD_UPD_CREATURE_ADDON_EMOTESTATE, "UPDATE creature_addon SET emote = ? WHERE guid = ?", CONNECTION_ASYNC);
 }

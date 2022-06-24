@@ -1101,6 +1101,11 @@ enum Language
     LANG_PANDAREN_A     = 43,  //Pandaren Alliance
     LANG_PANDAREN_H     = 44,  //Pandaren Horde
     LANG_RIKKITUN       = 168,
+	LANG_SHATH_YAR      = 178,
+    LANG_NERGLISH       = 179,
+    LANG_MOONKIN        = 180,
+    LANG_SHALASSIAN     = 181,
+    LANG_THALASSIAN_2   = 182,
     LANG_ADDON          = 0xFFFFFFFF                        // used by addons, in 2.4.0 not exist, replaced by messagetype?
 };
 
@@ -2574,7 +2579,7 @@ enum GameObjectReSpawnType
     GO_TYPE_DONTSPAWN      = 2
 };
 
-// EmotesText.dbc
+// EmotesText.dbc 7.3.5
 enum TextEmotes
 {
     TEXT_EMOTE_AGREE                = 1,
@@ -2830,10 +2835,16 @@ enum TextEmotes
     TEXT_EMOTE_SWEAT                = 451,
     TEXT_EMOTE_YW                   = 453,
     TEXT_EMOTE_READ                 = 456,
-    TEXT_EMOTE_BOOT                 = 506
+    TEXT_EMOTE_BOOT                 = 506,
+    TEXT_EMOTE_FORTHEALLIANCE       = 507,
+    TEXT_EMOTE_FORTTHEHORDE         = 508,
+    TEXT_EMOTE_WHOA                 = 517,
+    TEXT_EMOTE_OOPS                 = 518,
+    TEXT_EMOTE_ALLIANCE             = 519,
+    TEXT_EMOTE_HORDE                = 520
 };
 
-// Emotes.dbc (6.0.2.18988)
+// Emotes.dbc (7.3.5.26972)
 enum Emote
 {
     EMOTE_ONESHOT_NONE                           = 0,
@@ -3098,7 +3109,50 @@ enum Emote
     EMOTE_STATE_READ_AND_SIT                     = 616,
     EMOTE_STATE_PARRY_UNARMED                    = 619,
     EMOTE_STATE_BLOCK_SHIELD                     = 620,
-    EMOTE_STATE_SIT_GROUND_2                     = 621
+    EMOTE_STATE_SIT_GROUND_2                     = 621,
+    EMOTE_ONESHOT_MOUNTSPECIAL                   = 628,
+    EMOTE_ONESHOT_SETTLE                         = 636,
+    EMOTE_STATE_ATTACK_UNARMED_STILL             = 638,
+    EMOTE_STATE_READ_BOOK_AND_TALK               = 641,
+    EMOTE_ONESHOT_SLAM                           = 642,
+    EMOTE_ONESHOT_GRABTHROWN                     = 643,
+    EMOTE_ONESHOT_READYSPELLDIRECTED_NOSOUND     = 644,
+    EMOTE_STATE_READYSPELLOMNI_WITH_SOUND        = 645,
+    EMOTE_ONESHOT_TALK_BARSERVER                 = 646,
+    EMOTE_ONESHOT_WAVE_BARSERVER                 = 647,
+    EMOTE_STATE_WORK_MINING2                     = 648,
+    EMOTE_STATE_READY2HL_ALLOW_MOVEMENT          = 654,
+    EMOTE_STATE_USESTANDING_NOSHEATHE_STILL      = 655,
+    EMOTE_ONESHOT_WORK_STILL                     = 657,
+    EMOTE_STATE_HOLD_THROWN_INTERRUPTS           = 658,
+    EMOTE_ONESHOT_CANNIBALIZE                    = 659,
+    EMOTE_ONESHOT_NO_NOT_SWIMMING                = 661,
+    EMOTE_STATE_READYGLV                         = 663,
+    EMOTE_ONESHOT_COMBATABILITYGLV01             = 664,
+    EMOTE_ONESHOT_COMBATABILITYGLVOFF01          = 665,
+    EMOTE_ONESHOT_COMBATABILITYGLVBIG02          = 666,
+    EMOTE_ONESHOT_PARRYGLV                       = 667,
+    EMOTE_STATE_WORK_MINING3                     = 668,
+    EMOTE_ONESHOT_TALK_NOSHEATHE                 = 669,
+    EMOTE_ONESHOT_STAND_VAR3                     = 671,
+    EMOTE_STATE_KNEEL2                           = 672,
+    EMOTE_ONESHOT_CUSTOM0                        = 673,
+    EMOTE_ONESHOT_CUSTOM1                        = 674,
+    EMOTE_ONESHOT_CUSTOM2                        = 675,
+    EMOTE_ONESHOT_CUSTOM3                        = 676,
+    EMOTE_STATE_FLY_READY_UNARMED                = 677,
+    EMOTE_ONESHOT_CHEER_FORTHEALLIANCE           = 679,
+    EMOTE_ONESHOT_CHEER_FORTHEHORDE              = 680,
+    EMOTE_ONESHOT_STAND_VAR4                     = 690,
+    EMOTE_ONESHOT_FLYEMOTEEXCLAMATION            = 691,
+    EMOTE_STATE_EMOTEEAT                         = 700,
+    EMOTE_STATE_MONKHEAL_CHANNELOMNI             = 705,
+    EMOTE_STATE_MONKDEFENSE_READYUNARMED         = 706,
+    EMOTE_ONESHOT_STAND                          = 707,
+    EMOTE_STATE_WAPOURHOLD                       = 709,
+    EMOTE_STATE_READYBLOWDART                    = 710,
+    EMOTE_STATE_WORK_CHOPMEAT                    = 711,
+    EMOTE_STATE_MONK2HLIDLE                      = 712,
 };
 
 // AnimationData.dbc (6.0.2.18988)
