@@ -1461,8 +1461,6 @@ void World::LoadConfigSettings(bool reload)
     m_bool_configs[CONFIG_DONATE_ON_TESTS] = sConfigMgr->GetBoolDefault("Donate.On.Tests", false);
 
     m_int_configs[CONFIG_ARTIFACT_RESEARCH_TIMER] = sConfigMgr->GetIntDefault("Artifact.Research.Timer", 432000); // in sec
-    m_int_configs[CONFIG_ARTIFACT_KNOWLEDGE_CAP]  = sConfigMgr->GetIntDefault("Artifact.Knowledge.Cap", 55);
-    m_int_configs[CONFIG_ARTIFACT_KNOWLEDGE_START]  = sConfigMgr->GetIntDefault("Artifact.Knowledge.Start", 40);
 
     m_float_configs[CONFIG_CAP_KILLPOINTS] = sConfigMgr->GetFloatDefault("Cap.KillPoints", 150.0f);
     m_float_configs[CONFIG_CAP_KILL_CREATURE_POINTS] = sConfigMgr->GetFloatDefault("Cap.KillCreaturePoints", 150.0f);
@@ -1510,15 +1508,8 @@ void World::LoadConfigSettings(bool reload)
     m_int_configs[CONFIG_ANTICHEAT_MAX_ALLOWED_DESYNC] = sConfigMgr->GetIntDefault("Anticheat.MaxAllowedDesync", 0);
     m_int_configs[CONFIG_ANTICHEAT_GM_ANNOUNCE_MASK] = sConfigMgr->GetIntDefault("Anticheat.GMAnnounceMask", 0);
 
-    m_int_configs[CONFIG_MAX_ITEM_LEVEL] = sConfigMgr->GetIntDefault("Max.ItemLevel", 985);
-
     m_bool_configs[CONFIG_OBLITERUM_LEVEL_ENABLE]  = sConfigMgr->GetBoolDefault("Obliterum.LevelEnable", false);
     m_int_configs[CONFIG_OBLITERUM_LEVEL_START] = sConfigMgr->GetIntDefault("Obliterum.LevelStart", 0);
-    m_int_configs[CONFIG_OBLITERUM_LEVEL_MIN] = sConfigMgr->GetIntDefault("Obliterum.LevelMin", 850);
-    m_int_configs[CONFIG_OBLITERUM_LEVEL_MAX] = sConfigMgr->GetIntDefault("Obliterum.LevelMax", 900);
-
-    m_int_configs[CONFIG_ITEM_LEGENDARY_LIMIT] = sConfigMgr->GetIntDefault("Item.LegendaryLimit", 160000);
-    m_int_configs[CONFIG_ITEM_LEGENDARY_LEVEL] = sConfigMgr->GetIntDefault("Item.LegendaryLevel", 970);
 
     m_int_configs[CONFIG_CHALLENGE_LEVEL_LIMIT] = sConfigMgr->GetIntDefault("Challenge.LevelLimit", 30);
     m_int_configs[CONFIG_CHALLENGE_LEVEL_MAX] = sConfigMgr->GetIntDefault("Challenge.LevelMax", 15);
@@ -1558,6 +1549,51 @@ void World::LoadConfigSettings(bool reload)
 	m_int_configs[CONFIG_PVP_TEMPLATE_SECUNDARY_STAD] = sConfigMgr->GetIntDefault("PvP.TemplateSecondaryStad", 0);
 	// Enable Custom stad for each spialization
 	m_bool_configs[CONFIG_ENABLE_CUSTOM_STAD] = sConfigMgr->GetBoolDefault("Pvp.EnableCustomStad", false);
+	
+    // Legion patch configuration
+    m_int_configs[CONFIG_LEGION_ENABLED_PATCH] = sConfigMgr->GetIntDefault("Game.Patch", 3);
+    if (m_int_configs[CONFIG_LEGION_ENABLED_PATCH] == 1)
+    {
+        m_int_configs[CONFIG_ITEM_LEGENDARY_LIMIT] = sConfigMgr->GetIntDefault("Item.LegendaryLimit", 144439);
+        m_int_configs[CONFIG_ITEM_LEGENDARY_LEVEL] = sConfigMgr->GetIntDefault("Item.LegendaryLevel", 895);
+
+        m_int_configs[CONFIG_OBLITERUM_LEVEL_START] = sConfigMgr->GetIntDefault("Obliterum.LevelStart", 815);
+        m_int_configs[CONFIG_OBLITERUM_LEVEL_MIN] = sConfigMgr->GetIntDefault("Obliterum.LevelMin", 815);
+        m_int_configs[CONFIG_OBLITERUM_LEVEL_MAX] = sConfigMgr->GetIntDefault("Obliterum.LevelMax", 855);
+
+        m_int_configs[CONFIG_MAX_ITEM_LEVEL] = sConfigMgr->GetIntDefault("Max.ItemLevel", 925);
+
+        m_int_configs[CONFIG_ARTIFACT_KNOWLEDGE_CAP] = sConfigMgr->GetIntDefault("Artifact.Knowledge.Cap", 25);
+        m_int_configs[CONFIG_ARTIFACT_KNOWLEDGE_START] = sConfigMgr->GetIntDefault("Artifact.Knowledge.Start", 0);
+    }
+    else if (m_int_configs[CONFIG_LEGION_ENABLED_PATCH] == 2)
+    {
+        m_int_configs[CONFIG_ITEM_LEGENDARY_LIMIT] = sConfigMgr->GetIntDefault("Item.LegendaryLimit", 147910);
+        m_int_configs[CONFIG_ITEM_LEGENDARY_LEVEL] = sConfigMgr->GetIntDefault("Item.LegendaryLevel", 970);
+
+        m_int_configs[CONFIG_OBLITERUM_LEVEL_START] = sConfigMgr->GetIntDefault("Obliterum.LevelStart", 835);
+        m_int_configs[CONFIG_OBLITERUM_LEVEL_MIN] = sConfigMgr->GetIntDefault("Obliterum.LevelMin", 835);
+        m_int_configs[CONFIG_OBLITERUM_LEVEL_MAX] = sConfigMgr->GetIntDefault("Obliterum.LevelMax", 875);
+
+        m_int_configs[CONFIG_MAX_ITEM_LEVEL] = sConfigMgr->GetIntDefault("Max.ItemLevel", 955);
+
+        m_int_configs[CONFIG_ARTIFACT_KNOWLEDGE_CAP] = sConfigMgr->GetIntDefault("Artifact.Knowledge.Cap", 40);
+        m_int_configs[CONFIG_ARTIFACT_KNOWLEDGE_START] = sConfigMgr->GetIntDefault("Artifact.Knowledge.Start", 25);
+    }
+    else
+    {
+        m_int_configs[CONFIG_ITEM_LEGENDARY_LIMIT] = sConfigMgr->GetIntDefault("Item.LegendaryLimit", 160000);
+        m_int_configs[CONFIG_ITEM_LEGENDARY_LEVEL] = sConfigMgr->GetIntDefault("Item.LegendaryLevel", 1000);
+
+        m_int_configs[CONFIG_OBLITERUM_LEVEL_START] = sConfigMgr->GetIntDefault("Obliterum.LevelStart", 0);
+        m_int_configs[CONFIG_OBLITERUM_LEVEL_MIN] = sConfigMgr->GetIntDefault("Obliterum.LevelMin", 850);
+        m_int_configs[CONFIG_OBLITERUM_LEVEL_MAX] = sConfigMgr->GetIntDefault("Obliterum.LevelMax", 900);
+
+        m_int_configs[CONFIG_MAX_ITEM_LEVEL] = sConfigMgr->GetIntDefault("Max.ItemLevel", 985);
+
+        m_int_configs[CONFIG_ARTIFACT_KNOWLEDGE_CAP] = sConfigMgr->GetIntDefault("Artifact.Knowledge.Cap", 55);
+        m_int_configs[CONFIG_ARTIFACT_KNOWLEDGE_START] = sConfigMgr->GetIntDefault("Artifact.Knowledge.Start", 40);
+    }
 
     sAnticheatMgr->LoadConfig();
 
