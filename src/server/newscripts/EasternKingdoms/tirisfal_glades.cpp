@@ -160,40 +160,29 @@ class spell_summon_darnel_q26800 : public AuraScript
 class player_undead_start_zone : public PlayerScript
 {
     public:
-        player_undead_start_zone() : PlayerScript("player_undead_start_zone") {}
-       
-  	    uint32 timer_for_check;
+        player_undead_start_zone() : PlayerScript("player_undead_start_zone") {} 
         
        void OnLogin(Player* player, bool firstLogin) override
     {
-        timer_for_check = 200;
-    }
-    
-    void OnUpdate(Player* player, uint32 diff)
-    { 
-        if (!player || player->isGameMaster())
-            return;
-        
-        if (timer_for_check <= diff)
+           if (!player || player->isGameMaster())
+               return;
 
+           if (player->getRace() == RACE_UNDEAD_PLAYER)
+           {
+               player->CastSpell(player, 73523); //spell fake death
+           }
 
-                  if (player->getRace() == RACE_UNDEAD_PLAYER)
-                    {
-                        player->CastSpell(player, 73523); //spell fake death
-                        ChatHandler(player).PSendSysMessage("MANCO EL QUE LO LEA");
-                    }
-
-            }
-            timer_for_check = 200;
-        }
-        else
-            timer_for_check -= diff;
+           if (player->hasQuest(24959)) 
+           {
+               player->CastSpell(player, 73524); //spell revivir
+               player->RemoveAurasDueToSpell(73523); //spell fake death
+           }
     }
 };
 
 void AddSC_tirisfal_glades()
 {
-	RegisterCreatureAI(player_undead_start_zone);
+    new player_undead_start_zone();
     RegisterCreatureAI(npc_darnel_q26800);
     RegisterCreatureAI(npc_scarlet_corpse_q26800);
     RegisterCreatureAI(npc_deathguard_saltain);
