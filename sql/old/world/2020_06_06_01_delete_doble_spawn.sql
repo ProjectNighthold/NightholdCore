@@ -1,0 +1,19 @@
+/* delete dobles spawn en gesta de monje */
+DELETE FROM creature WHERE guid=362178;
+DELETE FROM creature WHERE guid=362179;	
+DELETE FROM creature WHERE guid=362190;	
+DELETE FROM creature WHERE guid=362191;	
+DELETE FROM creature WHERE guid=362192;	
+DELETE FROM creature WHERE guid=362193;	
+DELETE FROM creature WHERE guid=362194;	
+DELETE FROM creature WHERE guid=362195;	
+DELETE FROM creature WHERE guid=362209;	
+DELETE FROM creature WHERE guid=362210;	
+DELETE FROM creature WHERE guid=362256;	
+DELETE FROM creature WHERE guid=362257;	
+DELETE FROM creature WHERE guid=362258;	
+DELETE FROM creature WHERE guid=362260;	
+DELETE FROM creature WHERE guid=362261;	
+DELETE FROM creature WHERE guid=362262;	
+DELETE FROM creature WHERE guid=362282;	
+DELETE FROM creature WHERE guid=362283;	

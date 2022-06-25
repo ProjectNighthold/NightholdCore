@@ -1,0 +1,23 @@
+DELETE FROM `spell_script_names` WHERE spell_id=596 AND ScriptName =  'spell_pri_cosmic_ripple_effect';
+DELETE FROM `spell_script_names` WHERE spell_id=2060 AND ScriptName =  'spell_pri_cosmic_ripple_effect';
+DELETE FROM `spell_script_names` WHERE spell_id=2061 AND ScriptName =  'spell_pri_cosmic_ripple_effect';
+DELETE FROM `spell_script_names` WHERE spell_id=32546 AND ScriptName =  'spell_pri_cosmic_ripple_effect';
+DELETE FROM `spell_script_names` WHERE spell_id=33076 AND ScriptName =  'spell_pri_cosmic_ripple_effect';
+DELETE FROM `spell_script_names` WHERE spell_id=243272 AND ScriptName =  'spell_pri_cosmic_ripple_heal';
+DELETE FROM `spell_script_names` WHERE spell_id=243283 AND ScriptName =  'spell_pri_cosmic_ripple_heal';
+DELETE FROM `spell_script_names` WHERE spell_id=254798 AND ScriptName =  'spell_pri_cosmic_ripple_heal';
+DELETE FROM `spell_script_names` WHERE spell_id=2050 AND ScriptName =  'spell_pri_holy_word_serenity';
+DELETE FROM `spell_script_names` WHERE spell_id=34861 AND ScriptName =  'spell_pri_holy_word_sanctify';
+DELETE FROM `spell_script_names` WHERE spell_id=108853 AND ScriptName =  'spell_mage_fire_blast';
+
+INSERT INTO `spell_script_names` VALUES (596, 'spell_pri_cosmic_ripple_effect');
+INSERT INTO `spell_script_names` VALUES (2060, 'spell_pri_cosmic_ripple_effect');
+INSERT INTO `spell_script_names` VALUES (2061, 'spell_pri_cosmic_ripple_effect');
+INSERT INTO `spell_script_names` VALUES (32546, 'spell_pri_cosmic_ripple_effect');
+INSERT INTO `spell_script_names` VALUES (33076, 'spell_pri_cosmic_ripple_effect');
+INSERT INTO `spell_script_names` VALUES (243272, 'spell_pri_cosmic_ripple_heal');
+INSERT INTO `spell_script_names` VALUES (243283, 'spell_pri_cosmic_ripple_heal');
+INSERT INTO `spell_script_names` VALUES (254798, 'spell_pri_cosmic_ripple_heal');
+INSERT INTO `spell_script_names` VALUES (2050, 'spell_pri_holy_word_serenity');
+INSERT INTO `spell_script_names` VALUES (34861, 'spell_pri_holy_word_sanctify');
+INSERT INTO `spell_script_names` VALUES (108853, 'spell_mage_fire_blast');

@@ -1,0 +1,13 @@
+UPDATE `custom_pvp_penalizations` SET `damage_penalization`='-5' WHERE (`specialization_id`='62') AND (`specialization_name`='Mago Arcano');
+UPDATE `custom_pvp_penalizations` SET `damage_penalization`='5' WHERE (`specialization_id`='63') AND (`specialization_name`='Mago Fuego');
+UPDATE `custom_pvp_penalizations` SET `damage_penalization`='-5' WHERE (`specialization_id`='64') AND (`specialization_name`='Mago Escarcha');
+UPDATE `custom_pvp_penalizations` SET `healing_penalization`='-10' WHERE (`specialization_id`='65') AND (`specialization_name`='Paladin Sagrado');
+UPDATE `custom_pvp_penalizations` SET `mastery`='-10' WHERE (`specialization_id`='105') AND (`specialization_name`='Druida Restauracion');
+UPDATE `custom_pvp_penalizations` SET `damage_penalization`='-10' WHERE (`specialization_id`='256') AND (`specialization_name`='Sacerdote Disciplina');
+UPDATE `custom_pvp_penalizations` SET `healing_penalization`='-10' WHERE (`specialization_id`='257') AND (`specialization_name`='Sacerdote Sagrado');
+UPDATE `custom_pvp_penalizations` SET `damage_penalization`='-10', `mastery`='-20' WHERE (`specialization_id`='258') AND (`specialization_name`='Sacerdote Sombra');
+UPDATE `custom_pvp_penalizations` SET `damage_penalization`='-12' WHERE (`specialization_id`='262') AND (`specialization_name`='Shaman Elemental');
+UPDATE `custom_pvp_penalizations` SET `mastery`='-20' WHERE (`specialization_id`='264') AND (`specialization_name`='Shaman Restauracion');
+UPDATE `custom_pvp_penalizations` SET `damage_penalization`='-15', `mastery`='-30' WHERE (`specialization_id`='265') AND (`specialization_name`='Brujo Afliccion');
+UPDATE `custom_pvp_penalizations` SET `damage_penalization`='-12', `mastery`='0' WHERE (`specialization_id`='267') AND (`specialization_name`='Brujo Destruccion');
+UPDATE `custom_pvp_penalizations` SET `healing_penalization`='-15', `mastery`='0' WHERE (`specialization_id`='270') AND (`specialization_name`='Monje Tejedor de la Niebla');

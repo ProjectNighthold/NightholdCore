@@ -1,0 +1,1 @@
+UPDATE `npc_vendor` SET `entry`='4224' WHERE  `entry`=4225;

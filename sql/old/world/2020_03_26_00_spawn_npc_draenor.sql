@@ -1,0 +1,6 @@
+/*spawn npc faltante draenor 83051,83053*/
+DELETE FROM `creature` WHERE `guid` = 6700015 AND `id` =83051;
+DELETE FROM `creature` WHERE `guid` = 6700016 AND `id` =83053;
+INSERT INTO  `creature` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `PhaseId`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `npcflag2`, `unit_flags`, `dynamicflags`, `AiID`, `MovementID`, `MeleeID`, `isActive`, `skipClone`, `personal_size`, `isTeemingSpawn`, `unit_flags3`) values
+("6700015", "83051", "1116", "6755", "7469", "1", "1", "", "0", "0", "3522.09", "6473.07", "43.6981", "1.7506", "300", "0", "0", "108727", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"),
+("6700016", "83053", "1116", "6755", "7296", "1", "65535", "", "0", "0", "3510.92", "6937.95", "27.9457", "6.144", "300", "0", "0", "326181", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");

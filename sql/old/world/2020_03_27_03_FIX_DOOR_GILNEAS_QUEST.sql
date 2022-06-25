@@ -1,0 +1,11 @@
+DELETE FROM `gameobject` WHERE `guid`='46935';
+DELETE FROM `gameobject` WHERE `guid`='46931';
+DELETE FROM `gameobject` WHERE `guid`='46934';
+DELETE FROM `gameobject` WHERE `guid`='47149';
+DELETE FROM `gameobject` WHERE `guid`='47149';
+DELETE FROM `gameobject` WHERE `guid`='46917';
+DELETE FROM `gameobject` WHERE `guid`='46917';
+DELETE FROM `gameobject` WHERE `guid`='46917';
+DELETE FROM `gameobject` WHERE `guid`='46917';
+DELETE FROM `gameobject` WHERE `guid`='46917';
+DELETE FROM `gameobject` WHERE `guid`='46917';

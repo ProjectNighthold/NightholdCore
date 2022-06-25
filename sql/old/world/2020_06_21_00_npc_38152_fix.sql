@@ -1,0 +1,3 @@
+-- http://10.96.2.10/bugtracker/view.php?id=81
+DELETE FROM `creature` WHERE `guid`=3000000;
+INSERT INTO `creature` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `PhaseId`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `npcflag2`, `unit_flags`, `dynamicflags`, `AiID`, `MovementID`, `MeleeID`, `isActive`, `skipClone`, `personal_size`, `isTeemingSpawn`, `unit_flags3`) VALUES (3000000, 38152, 1, 4709, 4872, 1, 1, '', 30962, 0, -4098.5, -2369.88, 126.214, 2.23402, 120, 0, 0, 1532, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);

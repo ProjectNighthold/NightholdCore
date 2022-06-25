@@ -1,0 +1,6 @@
+DELETE FROM difficulty WHERE ID=16;
+INSERT INTO difficulty (ID, Name, GroupSizeHealthCurveID, GroupSizeDmgCurveID, GroupSizeSpellPointsCurveID, FallbackDifficultyID, InstanceType, MinPlayers, MaxPlayers, OldEnumValue, Flags, ToggleDifficultyID, ItemContext, OrderIndex, VerifiedBuild) VALUES (16, 'Mythic', 0, 0, 0, 15, 2, 1, 20, -1, 133, 0, 6, 5, 0);
+DELETE FROM difficulty WHERE ID=15;
+INSERT INTO difficulty (ID, Name, GroupSizeHealthCurveID, GroupSizeDmgCurveID, GroupSizeSpellPointsCurveID, FallbackDifficultyID, InstanceType, MinPlayers, MaxPlayers, OldEnumValue, Flags, ToggleDifficultyID, ItemContext, OrderIndex, VerifiedBuild) VALUES (15, 'Heroic', 0, 0, 0, 14, 2, 1, 30, -1, 68, 0, 5, 4, 0);
+DELETE FROM difficulty WHERE ID=14;
+INSERT INTO difficulty (ID, Name, GroupSizeHealthCurveID, GroupSizeDmgCurveID, GroupSizeSpellPointsCurveID, FallbackDifficultyID, InstanceType, MinPlayers, MaxPlayers, OldEnumValue, Flags, ToggleDifficultyID, ItemContext, OrderIndex, VerifiedBuild) VALUES (14, 'Normal', 0, 0, 0, 0, 2, 1, 30, -1, 6, 0, 3, 3, 0);

@@ -1,0 +1,1 @@
+UPDATE `spell_linked_spell` SET `caster`='4' WHERE (`spell_trigger`='81269') AND (`spell_effect`='207386') AND (`type`='9') AND (`caster`='5') AND (`target`='0') AND (`hastalent`='207385') AND (`effectMask`='0') AND (`actiontype`='0');

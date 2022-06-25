@@ -1,0 +1,23 @@
+-- Quest "The Emerald Nightmare: Ilgynoth"
+DELETE FROM creature_questender WHERE id=90250 AND quest=43548;
+INSERT INTO creature_questender (id, quest) VALUES (90250, 43548);
+DELETE FROM creature_questender WHERE id=93568 AND quest=43548;
+INSERT INTO creature_questender (id, quest) VALUES (93568, 43548);
+DELETE FROM creature_questender WHERE id=96746 AND quest=43548;
+INSERT INTO creature_questender (id, quest) VALUES (96746, 43548);
+DELETE FROM creature_questender WHERE id=98002 AND quest=43548;
+INSERT INTO creature_questender (id, quest) VALUES (98002, 43548);
+DELETE FROM creature_questender WHERE id=98092 AND quest=43548;
+INSERT INTO creature_questender (id, quest) VALUES (98092, 43548);
+DELETE FROM creature_questender WHERE id=99179 AND quest=43548;
+INSERT INTO creature_questender (id, quest) VALUES (99179, 43548);
+DELETE FROM creature_questender WHERE id=100635 AND quest=43548;
+INSERT INTO creature_questender (id, quest) VALUES (100635, 43548);
+DELETE FROM creature_questender WHERE id=103023 AND quest=43548;
+INSERT INTO creature_questender (id, quest) VALUES (103023, 43548);
+DELETE FROM creature_questender WHERE id=106199 AND quest=43548;
+INSERT INTO creature_questender (id, quest) VALUES (106199, 43548);
+DELETE FROM creature_questender WHERE id=108515 AND quest=43548;
+INSERT INTO creature_questender (id, quest) VALUES (108515, 43548);
+DELETE FROM creature_questender WHERE id=109776 AND quest=43548;
+INSERT INTO creature_questender (id, quest) VALUES (109776, 43548);

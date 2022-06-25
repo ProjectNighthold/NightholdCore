@@ -1,0 +1,9 @@
+/* Quest 35500 modificando el id del objetivo de la quest y spaneando al npc en la pahese 1 tambien
+Por alguna razon, aveces algunas de als misiones anterios a esta quest  te cambian de pahase
+*/
+DELETE FROM `quest_objectives` WHERE `QuestID`='35500';
+INSERT INTO `quest_objectives` (`ID`, `QuestID`, `Type`, `StorageIndex`, `ObjectID`, `Amount`, `Flags`, `Flags2`, `TaskStep`, `Description`, `VerifiedBuild`) VALUES ('273854', '35500', '0', '0', '82918', '1', '0', '0', '0', '', '19865');
+
+DELETE FROM `creature` WHERE `id`='82918';
+INSERT INTO `creature` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `PhaseId`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `npcflag2`, `unit_flags`, `dynamicflags`, `AiID`, `MovementID`, `MeleeID`, `isActive`, `skipClone`, `personal_size`, `isTeemingSpawn`, `unit_flags3`) VALUES ('11785129', '82918', '0', '4', '1437', '1', '2', '', '0', '1', '-10859.2', '-2662.9', '54.9774', '4.83572', '120', '0', '0', '140024', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+INSERT INTO `creature` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `PhaseId`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `npcflag2`, `unit_flags`, `dynamicflags`, `AiID`, `MovementID`, `MeleeID`, `isActive`, `skipClone`, `personal_size`, `isTeemingSpawn`, `unit_flags3`) VALUES ('11785130', '82918', '0', '4', '1437', '1', '1', '', '0', '1', '-10859.2', '-2662.9', '54.9774', '4.83572', '120', '0', '0', '140024', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');

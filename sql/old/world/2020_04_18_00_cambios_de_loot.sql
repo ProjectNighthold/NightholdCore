@@ -1,0 +1,66 @@
+REPLACE INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lootmode`, `groupid`, `mincountOrRef`, `maxcount`) VALUES
+(234235, 115279, 100, 1, 0, 1, 1) /* ilfered Parts */;
+
+
+REPLACE INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lootmode`, `groupid`, `mincountOrRef`, `maxcount`) VALUES
+(233611, 118252, 100, 1, 0, 1, 1) /* rophy Loop of the Highmaul */;
+
+
+REPLACE INTO `gameobject_loot_template` (`entry`, `item`, `ChanceOrQuestChance`, `lootmode`, `groupid`, `mincountOrRef`, `maxcount`) VALUES
+(232406, 106720, 2, 1, 0, 1, 1) /* tonecrag Breastplate */, 
+(232406, 106721, 1, 1, 0, 1, 1) /* tonecrag Gauntlets */, 
+(232406, 106722, 1, 1, 0, 1, 1) /* tonecrag Girdle */, 
+(232406, 106723, 1, 1, 0, 1, 1) /* tonecrag Helm */, 
+(232406, 106724, 1, 1, 0, 1, 1) /* tonecrag Legplates */, 
+(232406, 106725, 1, 1, 0, 1, 1) /* tonecrag Pauldrons */, 
+(232406, 106726, 4, 1, 0, 1, 1) /* tonecrag Sabatons */, 
+(232406, 106727, 2, 1, 0, 1, 1) /* tonecrag Shield */, 
+(232406, 106728, 2, 1, 0, 1, 1) /* tonecrag Vambraces */, 
+(232406, 106729, 1, 1, 0, 1, 1) /* eadowstomper Bindings */, 
+(232406, 106730, 2, 1, 0, 1, 1) /* eadowstomper Boots */, 
+(232406, 106731, 2, 1, 0, 1, 1) /* eadowstomper Britches */, 
+(232406, 106732, 3, 1, 0, 1, 1) /* eadowstomper Gloves */, 
+(232406, 106733, 1, 1, 0, 1, 1) /* eadowstomper Hood */, 
+(232406, 106734, 2, 1, 0, 1, 1) /* eadowstomper Jerkin */, 
+(232406, 106735, 1, 1, 0, 1, 1) /* eadowstomper Shoulders */, 
+(232406, 106736, 2, 1, 0, 1, 1) /* eadowstomper Waistband */, 
+(232406, 106737, 2, 1, 0, 1, 1) /* ark Star Cord */, 
+(232406, 106738, 1, 1, 0, 1, 1) /* ark Star Cowl */, 
+(232406, 106739, 1, 1, 0, 1, 1) /* ark Star Handwraps */, 
+(232406, 106740, 2, 1, 0, 1, 1) /* ark Star Leggings */, 
+(232406, 106741, 2, 1, 0, 1, 1) /* ark Star Robe */, 
+(232406, 106742, 3, 1, 0, 1, 1) /* ark Star Sandals */, 
+(232406, 106743, 1, 1, 0, 1, 1) /* ark Star Shoulderpads */, 
+(232406, 106744, 2, 1, 0, 1, 1) /* ark Star Wristwraps */, 
+(232406, 106745, 4, 1, 0, 1, 1) /* ackrunner Belt */, 
+(232406, 106746, 1, 1, 0, 1, 1) /* ackrunner Bracers */, 
+(232406, 106747, 1, 1, 0, 1, 1) /* ackrunner Gauntlets */, 
+(232406, 106748, 1, 1, 0, 1, 1) /* ackrunner Greaves */, 
+(232406, 106749, 2, 1, 0, 1, 1) /* ackrunner Helm */, 
+(232406, 106750, 2, 1, 0, 1, 1) /* ackrunner Legguards */, 
+(232406, 106751, 2, 1, 0, 1, 1) /* ackrunner Spaulders */, 
+(232406, 106752, 2, 1, 0, 1, 1) /* ackrunner Vest */, 
+(232406, 116627, 1, 1, 0, 1, 1) /* owling Axe */, 
+(232406, 116628, 2, 1, 0, 1, 1) /* owling Broadaxe */, 
+(232406, 116629, 5, 1, 0, 1, 1) /* owling Bow */, 
+(232406, 116630, 2, 1, 0, 1, 1) /* owling Crossbow */, 
+(232406, 116631, 2, 1, 0, 1, 1) /* owling Dagger */, 
+(232406, 116632, 1, 1, 0, 1, 1) /* shu'gun Spellblade */, 
+(232406, 116633, 2, 1, 0, 1, 1) /* owling Knuckles */, 
+(232406, 116634, 1, 1, 0, 1, 1) /* owling Gun */, 
+(232406, 116635, 2, 1, 0, 1, 1) /* owling Mace */, 
+(232406, 116636, 2, 1, 0, 1, 1) /* shu'gun Scepter */, 
+(232406, 116637, 1, 1, 0, 1, 1) /* owling Hammer */, 
+(232406, 116638, 1, 1, 0, 1, 1) /* owling Spear */, 
+(232406, 116639, 2, 1, 0, 1, 1) /* owling Staff */, 
+(232406, 116640, 0.82, 1, 0, 1, 1) /* owling Staff */, 
+(232406, 116641, 2, 1, 0, 1, 1) /* owling Sword */, 
+(232406, 116642, 2, 1, 0, 1, 1) /* owling Greatsword */, 
+(232406, 116643, 3, 1, 0, 1, 1) /* shu'gun Wand */, 
+(232406, 116687, 1, 1, 0, 1, 1) /* shu'gun Amulet */, 
+(232406, 116723, 2, 1, 0, 1, 1) /* shu'gun Cloak */, 
+(232406, 116724, 2, 1, 0, 1, 1) /* shu'gun Basin */, 
+(232406, 116725, 1, 1, 0, 1, 1) /* shu'gun Ring */, 
+(232406, 116920, 2, 1, 0, 1, 1) /* rue Steel Lockbox */;
+
+

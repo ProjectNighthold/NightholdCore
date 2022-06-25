@@ -1,0 +1,4 @@
+/*spawn npc faltante draenor */
+DELETE FROM `creature` WHERE `guid`=6700014 AND `id` = 84961;
+INSERT into `creature` (`guid`, `id`, `map`, `zoneId`, `areaId`, `spawnMask`, `phaseMask`, `PhaseId`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `MovementType`, `npcflag`, `npcflag2`, `unit_flags`, `dynamicflags`, `AiID`, `MovementID`, `MeleeID`, `isActive`, `skipClone`, `personal_size`, `isTeemingSpawn`, `unit_flags3`) values
+("6700014", "84961", "1116", "6719", "7220", "1", "1", "", "0", "0", "-573.375", "-123.357", "5.57922", "3.64653", "300", "0", "0", "37580", "37000", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");

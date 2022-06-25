@@ -1,0 +1,402 @@
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : LocalhostServer
+Source Server Version : 50505
+Source Host           : localhost:3310
+Source Database       : legion_world
+
+Target Server Type    : MYSQL
+Target Server Version : 50505
+File Encoding         : 65001
+
+Date: 2020-01-19 23:55:02
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for access_requirement
+-- ----------------------------
+DROP TABLE IF EXISTS `access_requirement`;
+CREATE TABLE `access_requirement` (
+  `mapId` mediumint(8) NOT NULL,
+  `difficulty` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `dungeonId` smallint(8) NOT NULL DEFAULT '0',
+  `level_min` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `level_max` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `item_level` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `item` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `item2` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `quest_done_A` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `quest_done_H` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `completed_achievement` int(11) unsigned NOT NULL DEFAULT '0',
+  `completed_achievement_A` int(11) unsigned NOT NULL DEFAULT '0',
+  `quest_failed_text` text,
+  `comment` text,
+  PRIMARY KEY (`mapId`,`difficulty`,`dungeonId`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Access Requirements';
+
+-- ----------------------------
+-- Records of access_requirement
+-- ----------------------------
+INSERT INTO `access_requirement` VALUES ('33', '1', '0', '11', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Entrada de la Guarida Colmillo de las Sombras');
+INSERT INTO `access_requirement` VALUES ('34', '1', '0', '15', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Entrada de las Empalizadas de Ventormenta');
+INSERT INTO `access_requirement` VALUES ('36', '1', '0', '10', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Entrada de DeadMines');
+INSERT INTO `access_requirement` VALUES ('43', '1', '0', '10', '0', '0', '0', '0', '0', '0', '0', '0', null, 'The Barrens - Cavernas de los Lamentos');
+INSERT INTO `access_requirement` VALUES ('47', '1', '0', '25', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Entrada de Razorfen Kraul');
+INSERT INTO `access_requirement` VALUES ('48', '1', '0', '15', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Entrada de Blackphantom Deeps');
+INSERT INTO `access_requirement` VALUES ('70', '1', '0', '30', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Entrada Uldaman');
+INSERT INTO `access_requirement` VALUES ('90', '1', '0', '19', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Entrada Gnomeregan');
+INSERT INTO `access_requirement` VALUES ('109', '1', '0', '45', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Altar de la entrada de Atal\'Hakkar');
+INSERT INTO `access_requirement` VALUES ('129', '1', '0', '35', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Entrada de Razorfen Downs');
+INSERT INTO `access_requirement` VALUES ('189', '1', '0', '20', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Monasterio Escarlata - Cementerio (Entrada)');
+INSERT INTO `access_requirement` VALUES ('209', '1', '0', '39', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Entrada Zul\'Farrak');
+INSERT INTO `access_requirement` VALUES ('229', '1', '0', '48', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Aguja Roca Negra - Instancia Garganta de Fuego (Interior)');
+INSERT INTO `access_requirement` VALUES ('230', '1', '0', '42', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Montaña Roca Negra - ¿Instancia de Garganta de Fuego?');
+INSERT INTO `access_requirement` VALUES ('249', '3', '0', '80', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Entrada de la guarida de Onyxia');
+INSERT INTO `access_requirement` VALUES ('249', '4', '0', '80', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Entrada de la guarida de Onyxia');
+INSERT INTO `access_requirement` VALUES ('269', '1', '0', '65', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Cavernas del Tiempo, Pantano Negro (Entrada)');
+INSERT INTO `access_requirement` VALUES ('269', '2', '0', '70', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Cavernas del Tiempo, Pantano Negro (Entrada)');
+INSERT INTO `access_requirement` VALUES ('309', '2', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Entrada Zul\'Gurub');
+INSERT INTO `access_requirement` VALUES ('329', '1', '0', '37', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Stratholme - Instancia de las Tierras de la Peste del Este');
+INSERT INTO `access_requirement` VALUES ('349', '1', '0', '25', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Maraudon');
+INSERT INTO `access_requirement` VALUES ('389', '1', '0', '10', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Abismo de fuego de ira - Instancia de Ogrimmar');
+INSERT INTO `access_requirement` VALUES ('409', '9', '0', '50', '0', '0', '0', '0', '0', '0', '0', '0', null, 'El puente fundido 40');
+INSERT INTO `access_requirement` VALUES ('429', '1', '0', '31', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Dire Maul');
+INSERT INTO `access_requirement` VALUES ('469', '9', '0', '60', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Guarida del Ala Negra - Montaña Roca Negra - Reinos del Este');
+INSERT INTO `access_requirement` VALUES ('509', '3', '0', '60', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Ruinas de Ahn\'Qiraj 10');
+INSERT INTO `access_requirement` VALUES ('531', '9', '0', '50', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Templo Ahn\'Qiraj 40');
+INSERT INTO `access_requirement` VALUES ('565', '2', '0', '255', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Mod de Gruul');
+INSERT INTO `access_requirement` VALUES ('533', '3', '0', '80', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Naxxramas 10');
+INSERT INTO `access_requirement` VALUES ('533', '4', '0', '80', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Naxxramas 25');
+INSERT INTO `access_requirement` VALUES ('534', '4', '0', '70', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Batalla del Monte Hyjal, Alianza Base 25');
+INSERT INTO `access_requirement` VALUES ('540', '1', '0', '65', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Las salas destrozadas (entrada)');
+INSERT INTO `access_requirement` VALUES ('540', '2', '0', '70', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Las salas destrozadas (entrada)');
+INSERT INTO `access_requirement` VALUES ('542', '1', '0', '58', '0', '0', '0', '0', '0', '0', '0', '0', null, 'El horno de sangre (entrada)');
+INSERT INTO `access_requirement` VALUES ('542', '2', '0', '70', '0', '0', '0', '0', '0', '0', '0', '0', null, 'El horno de sangre (entrada)');
+INSERT INTO `access_requirement` VALUES ('543', '1', '0', '57', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Murallas del Fuego Infernal (Entrada)');
+INSERT INTO `access_requirement` VALUES ('543', '2', '0', '70', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Murallas del Fuego Infernal (Entrada)');
+INSERT INTO `access_requirement` VALUES ('544', '4', '0', '70', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Guarida de Magtheridon 25');
+INSERT INTO `access_requirement` VALUES ('545', '1', '0', '65', '0', '0', '0', '0', '0', '0', '0', '0', null, 'The Steamvault (Entrada)');
+INSERT INTO `access_requirement` VALUES ('545', '2', '0', '70', '0', '0', '0', '0', '0', '0', '0', '0', null, 'The Steamvault (Entrada)');
+INSERT INTO `access_requirement` VALUES ('546', '1', '0', '60', '0', '0', '0', '0', '0', '0', '0', '0', null, 'The Underbog (Entrada)');
+INSERT INTO `access_requirement` VALUES ('546', '2', '0', '70', '0', '0', '0', '0', '0', '0', '0', '0', null, 'The Underbog (Entrada)');
+INSERT INTO `access_requirement` VALUES ('547', '1', '0', '59', '0', '0', '0', '0', '0', '0', '0', '0', null, 'The Slave Pens (Entrada)');
+INSERT INTO `access_requirement` VALUES ('547', '2', '0', '70', '0', '0', '0', '0', '0', '0', '0', '0', null, 'The Slave Pens (Entrada)');
+INSERT INTO `access_requirement` VALUES ('565', '3', '0', '255', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Mod de Gruul');
+INSERT INTO `access_requirement` VALUES ('552', '1', '0', '65', '0', '0', '0', '0', '0', '0', '0', '0', null, 'El Arcatraz (Entrada)');
+INSERT INTO `access_requirement` VALUES ('552', '2', '0', '70', '0', '0', '0', '0', '0', '0', '0', '0', null, 'El Arcatraz (Entrada)');
+INSERT INTO `access_requirement` VALUES ('553', '1', '0', '65', '0', '0', '0', '0', '0', '0', '0', '0', null, 'La Botánica (Entrada)');
+INSERT INTO `access_requirement` VALUES ('553', '2', '0', '70', '0', '0', '0', '0', '0', '0', '0', '0', null, 'La Botánica (Entrada)');
+INSERT INTO `access_requirement` VALUES ('554', '1', '0', '65', '0', '0', '0', '0', '0', '0', '0', '0', null, 'The Mechanar (Entrada)');
+INSERT INTO `access_requirement` VALUES ('554', '2', '0', '70', '0', '0', '0', '0', '0', '0', '0', '0', null, 'The Mechanar (Entrada)');
+INSERT INTO `access_requirement` VALUES ('555', '1', '0', '65', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Laberinto de las Sombras (Entrada)');
+INSERT INTO `access_requirement` VALUES ('555', '2', '0', '70', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Laberinto de las Sombras (Entrada)');
+INSERT INTO `access_requirement` VALUES ('556', '1', '0', '63', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Sethekk Halls (Entrada)');
+INSERT INTO `access_requirement` VALUES ('556', '2', '0', '70', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Sethekk Halls (Entrada)');
+INSERT INTO `access_requirement` VALUES ('557', '1', '0', '61', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Tumbas de maná (entrada)');
+INSERT INTO `access_requirement` VALUES ('557', '2', '0', '70', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Tumbas de maná (entrada)');
+INSERT INTO `access_requirement` VALUES ('558', '1', '0', '62', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Criptas Auchenai (Entrada)');
+INSERT INTO `access_requirement` VALUES ('558', '2', '0', '70', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Criptas Auchenai (Entrada)');
+INSERT INTO `access_requirement` VALUES ('560', '1', '0', '63', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Cavernas del tiempo, estribaciones de Old Hillsbrad (Entrada)');
+INSERT INTO `access_requirement` VALUES ('560', '2', '0', '70', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Cavernas del tiempo, estribaciones de Old Hillsbrad (Entrada)');
+INSERT INTO `access_requirement` VALUES ('548', '0', '0', '255', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Mod de resevoir');
+INSERT INTO `access_requirement` VALUES ('568', '1', '0', '255', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Zul\'Aman (No utilizado - Viejo)');
+INSERT INTO `access_requirement` VALUES ('574', '1', '0', '67', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Fortaleza de Utgarde (entrada)');
+INSERT INTO `access_requirement` VALUES ('574', '2', '0', '80', '0', '180', '0', '0', '0', '0', '0', '0', null, 'Fortaleza de Utgarde (entrada)');
+INSERT INTO `access_requirement` VALUES ('575', '1', '0', '77', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Pináculo de Utgarde (entrada)');
+INSERT INTO `access_requirement` VALUES ('575', '2', '0', '80', '0', '180', '0', '0', '0', '0', '0', '0', null, 'Pináculo de Utgarde (entrada)');
+INSERT INTO `access_requirement` VALUES ('576', '1', '0', '68', '0', '0', '0', '0', '0', '0', '0', '0', null, 'El nexo (entrada)');
+INSERT INTO `access_requirement` VALUES ('576', '2', '0', '80', '0', '180', '0', '0', '0', '0', '0', '0', null, 'El nexo (entrada)');
+INSERT INTO `access_requirement` VALUES ('578', '1', '0', '75', '0', '0', '0', '0', '0', '0', '0', '0', null, 'El Oculus (entrada)');
+INSERT INTO `access_requirement` VALUES ('578', '2', '0', '80', '0', '180', '0', '0', '0', '0', '0', '0', null, 'El Oculus (entrada)');
+INSERT INTO `access_requirement` VALUES ('548', '2', '0', '255', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Mod de resevoir');
+INSERT INTO `access_requirement` VALUES ('585', '1', '0', '65', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Terraza de Magisters (Entrada)');
+INSERT INTO `access_requirement` VALUES ('585', '2', '0', '70', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Terraza de Magisters (Entrada)');
+INSERT INTO `access_requirement` VALUES ('595', '1', '0', '75', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Eliminación de Stratholme (entrada)');
+INSERT INTO `access_requirement` VALUES ('595', '2', '0', '80', '0', '180', '0', '0', '0', '0', '0', '0', null, 'Eliminación de Stratholme (entrada)');
+INSERT INTO `access_requirement` VALUES ('599', '1', '0', '74', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Ulduar, Salas de piedra (entrada)');
+INSERT INTO `access_requirement` VALUES ('599', '2', '0', '80', '0', '180', '0', '0', '0', '0', '0', '0', null, 'Ulduar, Salas de piedra (entrada)');
+INSERT INTO `access_requirement` VALUES ('600', '1', '0', '71', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Fortaleza Drak\'Tharon (entrada)');
+INSERT INTO `access_requirement` VALUES ('600', '2', '0', '80', '0', '180', '0', '0', '0', '0', '0', '0', null, 'Fortaleza Drak\'Tharon (entrada)');
+INSERT INTO `access_requirement` VALUES ('601', '1', '0', '69', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Azjol-Nerub (entrada)');
+INSERT INTO `access_requirement` VALUES ('601', '2', '0', '80', '0', '180', '0', '0', '0', '0', '0', '0', null, 'Azjol-Nerub (entrada)');
+INSERT INTO `access_requirement` VALUES ('602', '1', '0', '75', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Ulduar, Salas de Relámpagos (entrada)');
+INSERT INTO `access_requirement` VALUES ('602', '2', '0', '80', '0', '180', '0', '0', '0', '0', '0', '0', null, 'Ulduar, Salas de Relámpagos (entrada)');
+INSERT INTO `access_requirement` VALUES ('603', '3', '0', '80', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Entrada de incursión Ulduar 10');
+INSERT INTO `access_requirement` VALUES ('603', '4', '0', '80', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Entrada de incursión de Ulduar 25');
+INSERT INTO `access_requirement` VALUES ('604', '1', '0', '73', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Gundrak (entrada norte)');
+INSERT INTO `access_requirement` VALUES ('604', '2', '0', '80', '0', '180', '0', '0', '0', '0', '0', '0', null, 'Gundrak (entrada norte)');
+INSERT INTO `access_requirement` VALUES ('608', '1', '0', '72', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Violet Hold (entrada)');
+INSERT INTO `access_requirement` VALUES ('608', '2', '0', '80', '0', '180', '0', '0', '0', '0', '0', '0', null, 'Violet Hold (entrada)');
+INSERT INTO `access_requirement` VALUES ('615', '3', '0', '80', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Cámara de aspectos, santuario de obsidiana 10');
+INSERT INTO `access_requirement` VALUES ('615', '4', '0', '80', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Cámara de aspectos, santuario de obsidiana 25');
+INSERT INTO `access_requirement` VALUES ('616', '3', '0', '80', '0', '0', '0', '0', '0', '0', '0', '0', null, 'El ojo de la eternidad 10');
+INSERT INTO `access_requirement` VALUES ('616', '4', '0', '80', '0', '0', '0', '0', '0', '0', '0', '0', null, 'El ojo de la eternidad 25');
+INSERT INTO `access_requirement` VALUES ('619', '1', '0', '70', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Ahn\'Kahet (entrada)');
+INSERT INTO `access_requirement` VALUES ('619', '2', '0', '80', '0', '180', '0', '0', '0', '0', '0', '0', null, 'Ahn\'Kahet (entrada)');
+INSERT INTO `access_requirement` VALUES ('624', '3', '0', '80', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Bóveda de Archavon 10');
+INSERT INTO `access_requirement` VALUES ('624', '4', '0', '80', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Bóveda de Archavon 25');
+INSERT INTO `access_requirement` VALUES ('631', '3', '0', '80', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Ciudadela de la Corona de Hielo 10');
+INSERT INTO `access_requirement` VALUES ('631', '4', '0', '80', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Ciudadela Corona de Hielo 25');
+INSERT INTO `access_requirement` VALUES ('631', '5', '0', '80', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Ciudadela de la Corona de Hielo 10 heroica');
+INSERT INTO `access_requirement` VALUES ('631', '6', '0', '80', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Ciudadela de la Corona de Hielo 25 heroica');
+INSERT INTO `access_requirement` VALUES ('632', '1', '0', '75', '0', '200', '0', '0', '0', '0', '0', '0', null, 'Forge of Souls (Entrada)');
+INSERT INTO `access_requirement` VALUES ('632', '2', '0', '80', '0', '200', '0', '0', '0', '0', '0', '0', null, 'Forge of Souls (Entrada)');
+INSERT INTO `access_requirement` VALUES ('649', '3', '0', '80', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Prueba del cruzado 10');
+INSERT INTO `access_requirement` VALUES ('649', '4', '0', '80', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Juicio del cruzado 25');
+INSERT INTO `access_requirement` VALUES ('649', '5', '0', '80', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Juicio del heroico cruzado 10');
+INSERT INTO `access_requirement` VALUES ('649', '6', '0', '80', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Prueba del Cruzado 25 heroico');
+INSERT INTO `access_requirement` VALUES ('650', '1', '0', '75', '0', '200', '0', '0', '0', '0', '0', '0', null, 'Prueba del campeón');
+INSERT INTO `access_requirement` VALUES ('650', '2', '0', '80', '0', '200', '0', '0', '0', '0', '0', '0', null, 'Prueba del campeón');
+INSERT INTO `access_requirement` VALUES ('658', '1', '0', '75', '0', '200', '0', '0', '24499', '24511', '0', '0', null, 'Pozo de Saron (Entrada)');
+INSERT INTO `access_requirement` VALUES ('658', '2', '0', '80', '0', '200', '0', '0', '24499', '24511', '0', '0', null, 'Pozo de Saron (Entrada)');
+INSERT INTO `access_requirement` VALUES ('668', '1', '0', '75', '0', '219', '0', '0', '24710', '24712', '0', '0', null, 'Salones de reflexión (entrada)');
+INSERT INTO `access_requirement` VALUES ('668', '2', '0', '80', '0', '219', '0', '0', '24710', '24712', '0', '0', null, 'Salones de reflexión (entrada)');
+INSERT INTO `access_requirement` VALUES ('724', '3', '0', '80', '0', '0', '0', '0', '0', '0', '0', '0', null, 'El santuario de rubí - 10N');
+INSERT INTO `access_requirement` VALUES ('724', '4', '0', '80', '0', '0', '0', '0', '0', '0', '0', '0', null, 'El Santuario de Rubí - 25N');
+INSERT INTO `access_requirement` VALUES ('724', '5', '0', '80', '0', '0', '0', '0', '0', '0', '0', '0', null, 'El Santuario de Rubí - 10H');
+INSERT INTO `access_requirement` VALUES ('724', '6', '0', '80', '0', '0', '0', '0', '0', '0', '0', '0', null, 'El Santuario de Rubí - 25H');
+INSERT INTO `access_requirement` VALUES ('938', '1', '0', '255', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Hora de finalización: 5N (no utilizada)');
+INSERT INTO `access_requirement` VALUES ('938', '2', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Hora final - 5H');
+INSERT INTO `access_requirement` VALUES ('940', '1', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Hora del crepúsculo (no utilizado)');
+INSERT INTO `access_requirement` VALUES ('940', '2', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Hora del crepúsculo');
+INSERT INTO `access_requirement` VALUES ('939', '2', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Pozo de la eternidad');
+INSERT INTO `access_requirement` VALUES ('962', '1', '0', '88', '0', '393', '0', '0', '0', '0', '0', '0', null, 'Puerta del sol poniente');
+INSERT INTO `access_requirement` VALUES ('962', '2', '0', '90', '0', '440', '0', '0', '0', '0', '0', '0', null, 'Puerta del sol poniente');
+INSERT INTO `access_requirement` VALUES ('994', '1', '0', '87', '0', '393', '0', '0', '0', '0', '0', '0', null, 'Palacio Mogu\'shan');
+INSERT INTO `access_requirement` VALUES ('994', '2', '0', '90', '0', '440', '0', '0', '0', '0', '0', '0', null, 'Palacio Mogu\'shan');
+INSERT INTO `access_requirement` VALUES ('1001', '1', '0', '21', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Salones Escarlatas');
+INSERT INTO `access_requirement` VALUES ('1001', '2', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Salones Escarlatas');
+INSERT INTO `access_requirement` VALUES ('1004', '1', '0', '23', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Monasterio Escarlata');
+INSERT INTO `access_requirement` VALUES ('1004', '2', '0', '28', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Monasterio Escarlata');
+INSERT INTO `access_requirement` VALUES ('1007', '1', '0', '33', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Scholomance');
+INSERT INTO `access_requirement` VALUES ('1007', '2', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Scholomance');
+INSERT INTO `access_requirement` VALUES ('959', '1', '0', '87', '0', '393', '0', '0', '0', '0', '0', '0', null, 'Monasterio Shadopan');
+INSERT INTO `access_requirement` VALUES ('959', '2', '0', '90', '0', '440', '0', '0', '0', '0', '0', '0', null, 'Monasterio Shadopan');
+INSERT INTO `access_requirement` VALUES ('1011', '1', '0', '87', '0', '393', '0', '0', '0', '0', '0', '0', null, 'Asedio del templo de Niuzao');
+INSERT INTO `access_requirement` VALUES ('1011', '2', '0', '90', '0', '440', '0', '0', '0', '0', '0', '0', null, 'Asedio del templo de Niuzao');
+INSERT INTO `access_requirement` VALUES ('961', '1', '0', '85', '0', '358', '0', '0', '0', '0', '0', '0', null, 'Cervecería Stormstout');
+INSERT INTO `access_requirement` VALUES ('961', '2', '0', '90', '0', '440', '0', '0', '0', '0', '0', '0', null, 'Cervecería Stormstout');
+INSERT INTO `access_requirement` VALUES ('960', '1', '0', '85', '0', '358', '0', '0', '0', '0', '0', '0', null, 'Templo de la serpiente de jade');
+INSERT INTO `access_requirement` VALUES ('960', '2', '0', '90', '0', '440', '0', '0', '0', '0', '0', '0', null, 'Templo de la serpiente de jade');
+INSERT INTO `access_requirement` VALUES ('996', '3', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Terraza de la primavera sin fin - 10N');
+INSERT INTO `access_requirement` VALUES ('996', '4', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Terraza de la primavera sin fin - 25N');
+INSERT INTO `access_requirement` VALUES ('996', '5', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Terraza de Endless Spring - 10H');
+INSERT INTO `access_requirement` VALUES ('996', '6', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Terraza de la primavera sin fin - 25H');
+INSERT INTO `access_requirement` VALUES ('1008', '3', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Bóvedas de Mogu\'shan - 10N');
+INSERT INTO `access_requirement` VALUES ('1008', '4', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Bóvedas de Mogu\'shan - 25N');
+INSERT INTO `access_requirement` VALUES ('1008', '5', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Bóvedas de Mogu\'shan - 10H');
+INSERT INTO `access_requirement` VALUES ('1008', '6', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Bóvedas de Mogu\'shan - 25H');
+INSERT INTO `access_requirement` VALUES ('1009', '3', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Corazón de miedo - 10N');
+INSERT INTO `access_requirement` VALUES ('1009', '4', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Corazón del miedo - 25N');
+INSERT INTO `access_requirement` VALUES ('1009', '5', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Corazón de miedo - 10H');
+INSERT INTO `access_requirement` VALUES ('1009', '6', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Corazón de miedo - 25H');
+INSERT INTO `access_requirement` VALUES ('999', '12', '0', '90', '0', '425', '0', '0', '0', '0', '0', '0', null, 'Caída de Theramore (Horda) - Normal');
+INSERT INTO `access_requirement` VALUES ('999', '11', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Theramore\'s Fall (Horde) - Heroica');
+INSERT INTO `access_requirement` VALUES ('1000', '12', '0', '90', '0', '425', '0', '0', '0', '0', '0', '0', null, 'Theramore\'s Fall (Alliance) - Escenario normal');
+INSERT INTO `access_requirement` VALUES ('1000', '11', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Theramore\'s Fall (Alliance) - Heroica');
+INSERT INTO `access_requirement` VALUES ('1005', '12', '0', '90', '0', '425', '0', '0', '0', '0', '0', '0', null, 'Una tormenta de cerveza - Escenario normal');
+INSERT INTO `access_requirement` VALUES ('1005', '11', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Una tormenta de cerveza - Heroica');
+INSERT INTO `access_requirement` VALUES ('1024', '12', '0', '90', '0', '425', '0', '0', '0', '0', '0', '0', null, 'Greenstone Village - Escenario normal');
+INSERT INTO `access_requirement` VALUES ('1024', '11', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Greenstone Village - Heroico');
+INSERT INTO `access_requirement` VALUES ('1030', '12', '0', '90', '0', '425', '0', '0', '0', '0', '0', '0', null, 'Cripta de los Reyes Olvidados - Escenario normal');
+INSERT INTO `access_requirement` VALUES ('1030', '11', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Cripta de los Reyes Olvidados - Heroica');
+INSERT INTO `access_requirement` VALUES ('1031', '11', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Arena de aniquilación: ¿escenario heroico?');
+INSERT INTO `access_requirement` VALUES ('1035', '11', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Templo de Kotmogu - ¿Escenario heroico?');
+INSERT INTO `access_requirement` VALUES ('1048', '11', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Unga Ingoo: ¿escenario heroico?');
+INSERT INTO `access_requirement` VALUES ('1050', '12', '0', '90', '0', '425', '0', '0', '0', '0', '0', '0', null, 'Asalto a Zan\'vess - Escenario normal');
+INSERT INTO `access_requirement` VALUES ('1050', '11', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Asalto a Zan\'vess - Escenario heroico');
+INSERT INTO `access_requirement` VALUES ('1051', '11', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Brewmoon Festival - ¿Escenario heroico?');
+INSERT INTO `access_requirement` VALUES ('1095', '11', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Daga en la oscuridad - ¿Escenario heroico?');
+INSERT INTO `access_requirement` VALUES ('670', '1', '0', '83', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Grim Batol');
+INSERT INTO `access_requirement` VALUES ('670', '2', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Grim Batol');
+INSERT INTO `access_requirement` VALUES ('1098', '3', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Trono del Trueno - 10N');
+INSERT INTO `access_requirement` VALUES ('1098', '4', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Trono del Trueno - 25N');
+INSERT INTO `access_requirement` VALUES ('1098', '5', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Trono del Trueno - 10H');
+INSERT INTO `access_requirement` VALUES ('1098', '6', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Trono del Trueno - 25H');
+INSERT INTO `access_requirement` VALUES ('1136', '3', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Asedio de Orgrimmar - 10N');
+INSERT INTO `access_requirement` VALUES ('1136', '4', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Asedio de Orgrimmar - 25N');
+INSERT INTO `access_requirement` VALUES ('1136', '5', '0', '90', '0', '0', '0', '0', '0', '0', '8680', '8679', null, 'Asedio de Orgrimmar - 10H');
+INSERT INTO `access_requirement` VALUES ('1136', '6', '0', '90', '0', '0', '0', '0', '0', '0', '8680', '8679', null, 'Asedio de Orgrimmar - 25H');
+INSERT INTO `access_requirement` VALUES ('644', '1', '0', '83', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Salones de origen (entrada)');
+INSERT INTO `access_requirement` VALUES ('644', '2', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Salones de origen (entrada)');
+INSERT INTO `access_requirement` VALUES ('643', '1', '0', '77', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Trono de las Mareas (Entrada)');
+INSERT INTO `access_requirement` VALUES ('643', '2', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Trono de las Mareas (Entrada)');
+INSERT INTO `access_requirement` VALUES ('645', '1', '0', '77', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Cavernas Roca Negra (Entrada)');
+INSERT INTO `access_requirement` VALUES ('645', '2', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Cavernas Roca Negra (Entrada)');
+INSERT INTO `access_requirement` VALUES ('657', '1', '0', '80', '0', '0', '0', '0', '0', '0', '0', '0', null, 'El pináculo de vórtice (entrada)');
+INSERT INTO `access_requirement` VALUES ('657', '2', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'El pináculo de vórtice (entrada)');
+INSERT INTO `access_requirement` VALUES ('725', '1', '0', '80', '0', '0', '0', '0', '0', '0', '0', '0', null, 'The Stonecore');
+INSERT INTO `access_requirement` VALUES ('725', '2', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'The Stonecore');
+INSERT INTO `access_requirement` VALUES ('755', '1', '0', '83', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Ciudad Perdida de los Tol\'vir (Entrada)');
+INSERT INTO `access_requirement` VALUES ('755', '2', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Ciudad Perdida de los Tol\'vir (Entrada)');
+INSERT INTO `access_requirement` VALUES ('859', '2', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Zul\'Gurub');
+INSERT INTO `access_requirement` VALUES ('720', '6', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Tierras de fuego (entrada) - 25H');
+INSERT INTO `access_requirement` VALUES ('720', '5', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Tierras de fuego (entrada) - 10H');
+INSERT INTO `access_requirement` VALUES ('720', '4', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Tierras de fuego (entrada) - 25N');
+INSERT INTO `access_requirement` VALUES ('720', '3', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Tierras de fuego (entrada) - 10N');
+INSERT INTO `access_requirement` VALUES ('671', '6', '0', '85', '0', '0', '0', '0', '0', '0', '4850', '0', null, 'El Bastión del Crepúsculo (Entrada) - 25H');
+INSERT INTO `access_requirement` VALUES ('671', '5', '0', '85', '0', '0', '0', '0', '0', '0', '4850', '0', null, 'El Bastión del Crepúsculo (Entrada) - 10H');
+INSERT INTO `access_requirement` VALUES ('671', '4', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'El Bastión del Crepúsculo (Entrada) - 25N');
+INSERT INTO `access_requirement` VALUES ('671', '3', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'El Bastión del Crepúsculo (Entrada) - 10N');
+INSERT INTO `access_requirement` VALUES ('669', '3', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Descenso de Blackwing - 10N');
+INSERT INTO `access_requirement` VALUES ('669', '4', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Blackwing Descent - 25N');
+INSERT INTO `access_requirement` VALUES ('669', '5', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Blackwing Descent - 10H');
+INSERT INTO `access_requirement` VALUES ('669', '6', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Descenso Blackwing - 25H');
+INSERT INTO `access_requirement` VALUES ('568', '2', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Zul\'Aman (5 heroico)');
+INSERT INTO `access_requirement` VALUES ('754', '3', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Trono de los Cuatro Vientos - 10N');
+INSERT INTO `access_requirement` VALUES ('754', '4', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Trono de los Cuatro Vientos - 25N');
+INSERT INTO `access_requirement` VALUES ('754', '5', '0', '85', '0', '0', '0', '0', '0', '0', '4851', '0', null, 'Trono de los Cuatro Vientos - 10H');
+INSERT INTO `access_requirement` VALUES ('754', '6', '0', '85', '0', '0', '0', '0', '0', '0', '4851', '0', null, 'Trono de los Cuatro Vientos - 25H');
+INSERT INTO `access_requirement` VALUES ('757', '3', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Baradin Hold - 10N');
+INSERT INTO `access_requirement` VALUES ('757', '4', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Baradin Hold - 25N');
+INSERT INTO `access_requirement` VALUES ('967', '3', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Alma de Dragón (Entrada) - 10N');
+INSERT INTO `access_requirement` VALUES ('967', '4', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Alma de Dragón (Entrada) - 25N');
+INSERT INTO `access_requirement` VALUES ('967', '5', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Alma de Dragón (Entrada) - 10H');
+INSERT INTO `access_requirement` VALUES ('967', '6', '0', '85', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Alma de Dragón (Entrada) - 25H');
+INSERT INTO `access_requirement` VALUES ('859', '1', '0', '255', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Zul\'Gurub (no utilizado)');
+INSERT INTO `access_requirement` VALUES ('994', '8', '0', '255', '0', '0', '0', '0', '0', '0', '0', '0', null, null);
+INSERT INTO `access_requirement` VALUES ('962', '8', '0', '255', '0', '0', '0', '0', '0', '0', '0', '0', null, null);
+INSERT INTO `access_requirement` VALUES ('961', '8', '0', '255', '0', '0', '0', '0', '0', '0', '0', '0', null, null);
+INSERT INTO `access_requirement` VALUES ('1011', '8', '0', '255', '0', '0', '0', '0', '0', '0', '0', '0', null, null);
+INSERT INTO `access_requirement` VALUES ('959', '8', '0', '255', '0', '0', '0', '0', '0', '0', '0', '0', null, null);
+INSERT INTO `access_requirement` VALUES ('960', '8', '0', '255', '0', '0', '0', '0', '0', '0', '0', '0', null, null);
+INSERT INTO `access_requirement` VALUES ('1001', '8', '0', '255', '0', '0', '0', '0', '0', '0', '0', '0', null, null);
+INSERT INTO `access_requirement` VALUES ('1004', '8', '0', '255', '0', '0', '0', '0', '0', '0', '0', '0', null, null);
+INSERT INTO `access_requirement` VALUES ('1007', '8', '0', '255', '0', '0', '0', '0', '0', '0', '0', '0', null, null);
+INSERT INTO `access_requirement` VALUES ('1136', '7', '0', '90', '0', '496', '0', '0', '0', '0', '0', '0', null, 'Siege of Orgrimmar - LFR');
+INSERT INTO `access_requirement` VALUES ('1136', '14', '771', '90', '0', '510', '0', '0', '0', '0', '0', '0', null, 'Siege of Orgrimmar - Flex');
+INSERT INTO `access_requirement` VALUES ('1136', '14', '772', '90', '0', '517', '0', '0', '0', '0', '0', '0', null, 'Siege of Orgrimmar - Flex');
+INSERT INTO `access_requirement` VALUES ('1136', '14', '773', '90', '0', '524', '0', '0', '0', '0', '0', '0', null, 'Siege of Orgrimmar - Flex');
+INSERT INTO `access_requirement` VALUES ('1136', '14', '774', '90', '0', '531', '0', '0', '0', '0', '0', '0', null, 'Siege of Orgrimmar - Flex');
+INSERT INTO `access_requirement` VALUES ('1136', '7', '717', '90', '0', '496', '0', '0', '0', '0', '8458', '0', null, 'Pago a las puertas - LFR');
+INSERT INTO `access_requirement` VALUES ('1136', '7', '724', '90', '0', '496', '0', '0', '0', '0', '8459', '0', null, 'Fortaleza subterránea - LFR');
+INSERT INTO `access_requirement` VALUES ('1136', '7', '725', '90', '0', '496', '0', '0', '0', '0', '8461', '0', null, 'Derrocamiento - LFR');
+INSERT INTO `access_requirement` VALUES ('996', '7', '0', '90', '0', '470', '0', '0', '0', '0', '0', '0', null, 'Terraza de la eterna primavera - LFR');
+INSERT INTO `access_requirement` VALUES ('1008', '7', '0', '90', '0', '460', '0', '0', '0', '0', '0', '0', null, 'Mazmorras de Mogu\'shan - LFR');
+INSERT INTO `access_requirement` VALUES ('1008', '7', '528', '90', '0', '460', '0', '0', '0', '0', '6458', '0', null, 'Bóveda de los secretos - LFR');
+INSERT INTO `access_requirement` VALUES ('1098', '7', '0', '90', '0', '480', '0', '0', '0', '0', '0', '0', null, 'Trono del trueno - LFR');
+INSERT INTO `access_requirement` VALUES ('1098', '7', '611', '90', '0', '480', '0', '0', '0', '0', '8069', '0', null, 'Profundidades olvidadas - LFR');
+INSERT INTO `access_requirement` VALUES ('1098', '7', '612', '90', '0', '480', '0', '0', '0', '0', '8070', '0', null, 'Salas de distorsión de la carne - LFR');
+INSERT INTO `access_requirement` VALUES ('1098', '7', '613', '90', '0', '480', '0', '0', '0', '0', '8071', '0', null, 'Parte superior de las tormentas - LFR');
+INSERT INTO `access_requirement` VALUES ('1009', '7', '0', '90', '0', '470', '0', '0', '0', '0', '0', '0', null, 'Heart of Fear - LFR');
+INSERT INTO `access_requirement` VALUES ('1009', '7', '530', '90', '0', '470', '0', '0', '0', '0', '6718', '0', null, 'Pesadilla Shek\'zir - LFR');
+INSERT INTO `access_requirement` VALUES ('1048', '12', '0', '90', '0', '425', '0', '0', '0', '0', '0', '0', null, 'Unga Ingoo - Normal scenario?');
+INSERT INTO `access_requirement` VALUES ('1104', '11', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Un poco de paciencia: escenario heroico ');
+INSERT INTO `access_requirement` VALUES ('1104', '12', '0', '90', '0', '425', '0', '0', '0', '0', '0', '0', null, 'Un poco de paciencia - Normal scenario ');
+INSERT INTO `access_requirement` VALUES ('1102', '12', '0', '90', '0', '425', '0', '0', '0', '0', '0', '0', null, 'Fortaleza Conquistadora - Normal scenario ');
+INSERT INTO `access_requirement` VALUES ('1103', '11', '0', '90', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Campamento de leones - Heroic scenario ');
+INSERT INTO `access_requirement` VALUES ('1103', '12', '0', '90', '0', '425', '0', '0', '0', '0', '0', '0', null, 'Campamento de leones: escenario normal');
+INSERT INTO `access_requirement` VALUES ('-1', '12', '493', '90', '0', '425', '0', '0', '0', '0', '0', '0', null, 'Random Script Mists of Pandaria');
+INSERT INTO `access_requirement` VALUES ('1051', '12', '0', '90', '0', '425', '0', '0', '0', '0', '0', '0', null, 'Festival de la Luna de Cerveza - Escenario normal');
+INSERT INTO `access_requirement` VALUES ('1031', '12', '0', '90', '0', '425', '0', '0', '0', '0', '0', '0', null, 'Arena de aniquilación: escenario normal');
+INSERT INTO `access_requirement` VALUES ('1130', '12', '0', '90', '0', '425', '0', '0', '0', '0', '0', '0', null, 'Sangre en la nieve: escenario norma');
+INSERT INTO `access_requirement` VALUES ('1099', '12', '0', '90', '0', '429', '0', '0', '0', '0', '0', '0', null, 'Batalla en alta mar: escenario normal');
+INSERT INTO `access_requirement` VALUES ('1144', '12', '0', '90', '0', '425', '0', '0', '0', '0', '0', '0', null, 'El corazón oscuro de Pandaria: escenario normal');
+INSERT INTO `access_requirement` VALUES ('1095', '12', '0', '90', '0', '425', '0', '0', '0', '0', '0', '0', null, 'Daga en la oscuridad - Escenario normal');
+INSERT INTO `access_requirement` VALUES ('1131', '12', '0', '90', '0', '425', '0', '0', '0', '0', '0', '0', null, 'Secretos de la cascada de fuego: escenario normal');
+INSERT INTO `access_requirement` VALUES ('564', '2', '0', '255', '0', '0', '0', '0', '0', '0', '0', '0', null, 'BT mod');
+INSERT INTO `access_requirement` VALUES ('564', '3', '0', '255', '0', '0', '0', '0', '0', '0', '0', '0', null, 'BT mod');
+INSERT INTO `access_requirement` VALUES ('565', '0', '0', '255', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Gruul`s mod');
+INSERT INTO `access_requirement` VALUES ('1530', '17', '0', '110', '0', '835', '0', '0', '0', '0', '0', '0', null, 'The Nighthold - Lfr');
+INSERT INTO `access_requirement` VALUES ('1530', '16', '0', '110', '0', '0', '0', '0', '0', '0', '10820', '0', null, 'The Nighthold - Mythic');
+INSERT INTO `access_requirement` VALUES ('1530', '15', '0', '110', '0', '0', '0', '0', '0', '0', '10820', '0', null, 'The Nighthold - Heroic');
+INSERT INTO `access_requirement` VALUES ('1530', '14', '0', '110', '0', '0', '0', '0', '0', '0', '10820', '0', null, 'The Nighthold - Normal');
+INSERT INTO `access_requirement` VALUES ('1520', '17', '0', '110', '0', '825', '0', '0', '0', '0', '0', '0', null, 'The Emerald Nightmare - Lfr');
+INSERT INTO `access_requirement` VALUES ('1520', '16', '0', '110', '0', '0', '0', '0', '0', '0', '0', '0', null, 'The Emerald Nightmare - Mythic');
+INSERT INTO `access_requirement` VALUES ('1520', '15', '0', '110', '0', '0', '0', '0', '0', '0', '0', '0', null, 'The Emerald Nightmare - Heroic');
+INSERT INTO `access_requirement` VALUES ('1520', '14', '0', '110', '0', '0', '0', '0', '0', '0', '0', '0', null, 'The Emerald Nightmare - Normal');
+INSERT INTO `access_requirement` VALUES ('1571', '23', '0', '110', '0', '840', '0', '0', '0', '0', '0', '0', null, 'El barrio de las estrellas - Lfg Mythic');
+INSERT INTO `access_requirement` VALUES ('1571', '2', '0', '110', '0', '810', '0', '0', '0', '0', '0', '0', null, 'El barrio de las estrellas - Lfg Heroic');
+INSERT INTO `access_requirement` VALUES ('1571', '1', '0', '110', '0', '680', '0', '0', '0', '0', '0', '0', null, 'Star Quarter - Lfg Normal');
+INSERT INTO `access_requirement` VALUES ('1516', '23', '0', '110', '0', '840', '0', '0', '0', '0', '0', '0', null, 'Catacumbas de Suramar - Lfg Mythic');
+INSERT INTO `access_requirement` VALUES ('1501', '23', '0', '110', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Torreón Grajo Negro - Lfg Mythic');
+INSERT INTO `access_requirement` VALUES ('1516', '2', '0', '110', '0', '810', '0', '0', '0', '0', '0', '0', null, 'Catacumbas de Suramar - Lfg Heroic');
+INSERT INTO `access_requirement` VALUES ('1516', '1', '0', '110', '0', '680', '0', '0', '0', '0', '0', '0', null, 'Catacumbas de Suramar - Lfg Normal');
+INSERT INTO `access_requirement` VALUES ('1544', '23', '0', '110', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Asalto en el Bastión Violeta - Lfg Mythic');
+INSERT INTO `access_requirement` VALUES ('1544', '2', '1209', '110', '0', '810', '0', '0', '0', '0', '0', '0', null, 'Bastión de amatista de asalto - Lfg Heroic 1209');
+INSERT INTO `access_requirement` VALUES ('-1', '1', '788', '90', '0', '510', '0', '0', '0', '0', '0', '0', null, 'Mazmorras aleatorias Warlords of Draenor');
+INSERT INTO `access_requirement` VALUES ('-1', '2', '789', '100', '0', '610', '0', '0', '0', '0', '0', '0', null, 'Calabozo aleatorio Warlords of Draenor (Heroico)');
+INSERT INTO `access_requirement` VALUES ('-1', '1', '1045', '100', '0', '680', '0', '0', '0', '0', '0', '0', null, 'Mazmorra de la Legión Aleatoria');
+INSERT INTO `access_requirement` VALUES ('-1', '2', '1046', '110', '0', '810', '0', '0', '0', '0', '0', '0', null, 'Mazmorra de la Legión Aleatoria (Heroica)');
+INSERT INTO `access_requirement` VALUES ('1544', '1', '1208', '110', '0', '680', '0', '0', '0', '0', '0', '0', null, 'Asalto Amatista - Lfg Normal 1208');
+INSERT INTO `access_requirement` VALUES ('1501', '2', '1205', '110', '0', '810', '0', '0', '0', '0', '0', '0', null, 'Torreón Grajo Negro - Lfg Heroic 1205');
+INSERT INTO `access_requirement` VALUES ('1492', '23', '0', '110', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Vientre de almas - Lfg Mythic');
+INSERT INTO `access_requirement` VALUES ('1501', '1', '1204', '110', '0', '680', '0', '0', '0', '0', '0', '0', null, 'Torre de torre negra - Lfg Normal 1204');
+INSERT INTO `access_requirement` VALUES ('1492', '2', '1192', '110', '0', '810', '0', '0', '0', '0', '0', '0', null, 'Vientre del alma - Lfg Heroic 1192');
+INSERT INTO `access_requirement` VALUES ('1492', '1', '1191', '110', '0', '680', '0', '0', '0', '0', '0', '0', null, 'Vientre de almas - Lfg Normal 1191');
+INSERT INTO `access_requirement` VALUES ('1493', '23', '0', '110', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Guardian Casemates - Lfg Mythic');
+INSERT INTO `access_requirement` VALUES ('1458', '23', '0', '110', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Guarida de Neltharion - Lfg Mythic');
+INSERT INTO `access_requirement` VALUES ('1493', '2', '1044', '110', '0', '810', '0', '0', '0', '0', '0', '0', null, 'Guardian Casemates - Lfg Heroic 1044');
+INSERT INTO `access_requirement` VALUES ('1493', '1', '1043', '110', '0', '680', '0', '0', '0', '0', '0', '0', null, 'Guardian Casemates - Lfg Normal 1043');
+INSERT INTO `access_requirement` VALUES ('1458', '2', '1207', '110', '0', '810', '0', '0', '0', '0', '0', '0', null, 'Guarida de Neltharion - Lfg Heroico 1207');
+INSERT INTO `access_requirement` VALUES ('1458', '1', '1206', '98', '0', '680', '0', '0', '0', '0', '0', '0', null, 'Guarida de Neltharion - Lfg Normal 1206');
+INSERT INTO `access_requirement` VALUES ('1466', '23', '0', '110', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Arboleda Corazón Oscuro - Lfg Mythic');
+INSERT INTO `access_requirement` VALUES ('1466', '2', '1202', '110', '0', '810', '0', '0', '0', '0', '0', '0', null, 'Arboleda Corazón Oscuro - Lfg Heroic 1202');
+INSERT INTO `access_requirement` VALUES ('1466', '1', '1201', '98', '0', '680', '0', '0', '0', '0', '0', '0', null, 'Arboleda Corazón Oscuro - Lfg Normal 1201');
+INSERT INTO `access_requirement` VALUES ('1477', '23', '0', '110', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Salas de valor - Lfg Mythic');
+INSERT INTO `access_requirement` VALUES ('1477', '2', '1194', '110', '0', '810', '0', '0', '0', '0', '0', '0', null, 'Salas de valor - Lfg Heroic 1194');
+INSERT INTO `access_requirement` VALUES ('1477', '1', '1193', '98', '0', '680', '0', '0', '0', '0', '0', '0', null, 'Salones del Valor - Lfg Normal 1193');
+INSERT INTO `access_requirement` VALUES ('1456', '23', '0', '110', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Ojo de Azshara - Lfg Mythic');
+INSERT INTO `access_requirement` VALUES ('1456', '2', '1175', '110', '0', '810', '0', '0', '0', '0', '0', '0', null, 'Ojo de Azshara - Lfg Heroic 1175');
+INSERT INTO `access_requirement` VALUES ('1456', '1', '1174', '98', '0', '680', '0', '0', '0', '0', '0', '0', null, 'Ojo de Azshara - Lfg Normal 1174');
+INSERT INTO `access_requirement` VALUES ('1209', '23', '0', '100', '0', '670', '0', '0', '0', '0', '0', '0', null, 'Skyreach - Mythic 1010');
+INSERT INTO `access_requirement` VALUES ('1209', '2', '780', '100', '0', '610', '0', '0', '0', '0', '0', '0', null, 'Skyreach - Heroic 780');
+INSERT INTO `access_requirement` VALUES ('1209', '1', '779', '97', '98', '560', '0', '0', '0', '0', '0', '0', null, 'Skyreach - Normal 779');
+INSERT INTO `access_requirement` VALUES ('1176', '23', '0', '100', '0', '670', '0', '0', '0', '0', '0', '0', null, 'Shadowmoon Burial Grounds - Mythic 1009');
+INSERT INTO `access_requirement` VALUES ('1176', '2', '784', '100', '0', '610', '0', '0', '0', '0', '0', '0', null, 'Shadowmoon Burial Grounds - Heroic 784');
+INSERT INTO `access_requirement` VALUES ('1176', '1', '783', '100', '0', '595', '0', '0', '0', '0', '0', '0', null, 'Shadowmoon Burial Grounds - Normal 783');
+INSERT INTO `access_requirement` VALUES ('1182', '23', '0', '100', '0', '670', '0', '0', '0', '0', '0', '0', null, 'Auchindoun WOD - Mythic 1008');
+INSERT INTO `access_requirement` VALUES ('1182', '2', '845', '100', '0', '610', '0', '0', '0', '0', '0', '0', null, 'Auchindoun WOD - Heroic 845');
+INSERT INTO `access_requirement` VALUES ('1182', '1', '820', '94', '96', '595', '0', '0', '0', '0', '0', '0', null, 'Auchindoun WOD - Normal 820');
+INSERT INTO `access_requirement` VALUES ('1195', '23', '0', '100', '0', '670', '0', '0', '0', '0', '0', '0', null, 'Iron Docks - Mythic 1007');
+INSERT INTO `access_requirement` VALUES ('1195', '2', '857', '100', '0', '610', '0', '0', '0', '0', '0', '0', null, 'Iron Docks - Heroic 857');
+INSERT INTO `access_requirement` VALUES ('1195', '1', '821', '92', '93', '595', '0', '0', '0', '0', '0', '0', null, 'Iron Docks - Normal 821');
+INSERT INTO `access_requirement` VALUES ('1208', '23', '0', '100', '0', '670', '0', '0', '0', '0', '0', '0', null, 'Grimrail Depot - Mythic 1006');
+INSERT INTO `access_requirement` VALUES ('1208', '2', '858', '100', '0', '610', '0', '0', '0', '0', '0', '0', null, 'Grimrail Depot - Heroic 858');
+INSERT INTO `access_requirement` VALUES ('1175', '23', '0', '100', '0', '670', '0', '0', '0', '0', '0', '0', null, 'Bloodmaul Slag Mines - Mythic 1005');
+INSERT INTO `access_requirement` VALUES ('1208', '1', '822', '100', '0', '610', '0', '0', '0', '0', '0', '0', null, 'Grimrail Depot - Normal 822');
+INSERT INTO `access_requirement` VALUES ('1175', '2', '859', '100', '0', '610', '0', '0', '0', '0', '0', '0', null, 'Bloodmaul Slag Mines - Heroic 859');
+INSERT INTO `access_requirement` VALUES ('1358', '23', '0', '100', '0', '670', '0', '0', '0', '0', '0', '0', null, 'Upper Blackrock Spire - Mythic 1004');
+INSERT INTO `access_requirement` VALUES ('1175', '1', '787', '90', '91', '510', '0', '0', '0', '0', '0', '0', null, 'Bloodmaul Slag Mines - Normal 787');
+INSERT INTO `access_requirement` VALUES ('1358', '2', '860', '100', '0', '610', '0', '0', '0', '0', '0', '0', null, 'Upper Blackrock Spire - Heroic 860');
+INSERT INTO `access_requirement` VALUES ('1279', '23', '0', '100', '0', '670', '0', '0', '0', '0', '0', '0', null, 'Everbloom - Mythic 1003');
+INSERT INTO `access_requirement` VALUES ('1358', '1', '330', '100', '0', '595', '0', '0', '0', '0', '0', '0', null, 'Upper Blackrock Spire - Normal 330');
+INSERT INTO `access_requirement` VALUES ('1279', '1', '824', '100', '0', '595', '0', '0', '0', '0', '0', '0', null, 'Everbloom - Normal 824');
+INSERT INTO `access_requirement` VALUES ('1279', '2', '866', '100', '0', '610', '0', '0', '0', '0', '0', '0', null, 'Everbloom - Heroic 866');
+INSERT INTO `access_requirement` VALUES ('1448', '17', '0', '100', '0', '650', '0', '0', '0', '0', '0', '0', null, 'Hellfire Raid Hellbreach - Lfr');
+INSERT INTO `access_requirement` VALUES ('1448', '16', '0', '100', '0', '680', '0', '0', '0', '0', '0', '0', null, 'Hellfire Raid Hellbreach - Mythic');
+INSERT INTO `access_requirement` VALUES ('1448', '15', '0', '100', '0', '670', '0', '0', '0', '0', '0', '0', null, 'Hellfire Raid Hellbreach - Heroic');
+INSERT INTO `access_requirement` VALUES ('1448', '14', '0', '100', '0', '660', '0', '0', '0', '0', '0', '0', null, 'Hellfire Raid Hellbreach - Normal');
+INSERT INTO `access_requirement` VALUES ('1205', '17', '0', '100', '0', '635', '0', '0', '0', '0', '0', '0', null, 'Blackrock Foundry - Lfr');
+INSERT INTO `access_requirement` VALUES ('1205', '16', '0', '100', '0', '665', '0', '0', '0', '0', '0', '0', null, 'Blackrock Foundry - Mythic');
+INSERT INTO `access_requirement` VALUES ('1205', '15', '0', '100', '0', '655', '0', '0', '0', '0', '0', '0', null, 'Blackrock Foundry - Heroic');
+INSERT INTO `access_requirement` VALUES ('1205', '14', '0', '100', '0', '645', '0', '0', '0', '0', '0', '0', null, 'Blackrock Foundry - Normal');
+INSERT INTO `access_requirement` VALUES ('1228', '17', '0', '100', '0', '615', '0', '0', '0', '0', '0', '0', null, 'Highmaul - Lfr');
+INSERT INTO `access_requirement` VALUES ('1228', '16', '0', '100', '0', '645', '0', '0', '0', '0', '0', '0', null, 'Highmaul - Mythic');
+INSERT INTO `access_requirement` VALUES ('1228', '15', '0', '100', '0', '635', '0', '0', '0', '0', '0', '0', null, 'Highmaul - Heroic');
+INSERT INTO `access_requirement` VALUES ('1228', '14', '0', '100', '0', '625', '0', '0', '0', '0', '0', '0', null, 'Highmaul - Normal');
+INSERT INTO `access_requirement` VALUES ('564', '0', '0', '255', '0', '0', '0', '0', '0', '0', '0', '0', null, 'BT mod');
+INSERT INTO `access_requirement` VALUES ('580', '0', '0', '255', '0', '0', '0', '0', '0', '0', '0', '0', null, 'SP mod');
+INSERT INTO `access_requirement` VALUES ('548', '3', '0', '255', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Resevoir mod');
+INSERT INTO `access_requirement` VALUES ('550', '3', '0', '255', '0', '0', '0', '0', '0', '0', '0', '0', null, 'TK mod');
+INSERT INTO `access_requirement` VALUES ('550', '2', '0', '255', '0', '0', '0', '0', '0', '0', '0', '0', null, 'TK mod');
+INSERT INTO `access_requirement` VALUES ('550', '0', '0', '255', '0', '0', '0', '0', '0', '0', '0', '0', null, 'TK mod');
+INSERT INTO `access_requirement` VALUES ('580', '2', '0', '255', '0', '0', '0', '0', '0', '0', '0', '0', null, 'SP mod');
+INSERT INTO `access_requirement` VALUES ('580', '3', '0', '255', '0', '0', '0', '0', '0', '0', '0', '0', null, 'SP mod');
+INSERT INTO `access_requirement` VALUES ('1712', '14', '0', '110', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Antorus, el Trono Ardiente');
+INSERT INTO `access_requirement` VALUES ('1712', '15', '0', '110', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Antorus, el Trono Ardiente');
+INSERT INTO `access_requirement` VALUES ('1712', '16', '0', '110', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Antorus, el Trono Ardiente');
+INSERT INTO `access_requirement` VALUES ('1648', '17', '1411', '110', '110', '850', '0', '0', '0', '0', '0', '0', null, 'Prueba de valor');
+INSERT INTO `access_requirement` VALUES ('1753', '23', '0', '110', '0', '0', '0', '0', '47220', '47220', '12007', '0', null, 'Asiento del Triunvirato (M)');
+INSERT INTO `access_requirement` VALUES ('1753', '2', '0', '110', '0', '0', '0', '0', '47220', '47220', '0', '0', '', 'Asiento del Triunvirato (H)');
+INSERT INTO `access_requirement` VALUES ('1712', '17', '1610', '110', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Antorus: avance de la luz');
+INSERT INTO `access_requirement` VALUES ('1712', '17', '1611', '110', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Antorus: Descenso prohibido');
+INSERT INTO `access_requirement` VALUES ('1712', '17', '1612', '110', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Antorus: El destino de la esperanza');
+INSERT INTO `access_requirement` VALUES ('1712', '17', '1613', '110', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Antorus: Trono del Panteón');
+INSERT INTO `access_requirement` VALUES ('1677', '23', '0', '110', '0', '0', '0', '0', '0', '0', '0', '0', null, 'CoEN Mythic');
+INSERT INTO `access_requirement` VALUES ('1677', '2', '0', '110', '0', '0', '0', '0', '0', '0', '0', '0', null, 'CoEN HM');
+INSERT INTO `access_requirement` VALUES ('1651', '23', '0', '110', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Kara Mythic');
+INSERT INTO `access_requirement` VALUES ('1651', '2', '0', '110', '0', '0', '0', '0', '0', '0', '0', '0', null, 'Kara HM');

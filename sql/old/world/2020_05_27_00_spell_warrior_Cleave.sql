@@ -1,0 +1,2 @@
+/* Torbellino no aumenta las cargas de rajar*/
+DELETE FROM `spell_linked_spell` WHERE (`spell_trigger`='1680') AND (`spell_effect`='188923') AND (`type`='5') AND (`caster`='0') AND (`target`='3') AND (`hastalent`='188923') AND (`effectMask`='0') AND (`actiontype`='21');

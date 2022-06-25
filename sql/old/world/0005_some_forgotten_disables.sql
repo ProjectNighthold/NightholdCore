@@ -1,0 +1,2 @@
+DELETE FROM disables WHERE sourceType=1 AND entry=24527;
+INSERT INTO disables (sourceType, entry, flags, params_0, params_1, comment) VALUES (1, 24527, 0, '', '', 'Deprecated quest: Your Path begins here');

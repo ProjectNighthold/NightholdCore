@@ -1,0 +1,69 @@
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : SERVER OFICIAL 10.96.2.9
+Source Server Version : 50505
+Source Host           : 10.96.2.9:3306
+Source Database       : legion_world
+
+Target Server Type    : MYSQL
+Target Server Version : 50505
+File Encoding         : 65001
+
+Date: 2020-07-25 11:12:32
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for custom_pvp_penalizations
+-- ----------------------------
+DROP TABLE IF EXISTS `custom_pvp_penalizations`;
+CREATE TABLE `custom_pvp_penalizations` (
+  `specialization_id` int(11) NOT NULL,
+  `specialization_name` varchar(255) NOT NULL,
+  `damage_penalization` int(11) NOT NULL DEFAULT '0',
+  `healing_penalization` int(11) NOT NULL DEFAULT '0',
+  `mastery` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`specialization_id`,`specialization_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of custom_pvp_penalizations
+-- ----------------------------
+INSERT INTO `custom_pvp_penalizations` VALUES ('62', 'Mago Arcano', '-10', '0', '0');
+INSERT INTO `custom_pvp_penalizations` VALUES ('63', 'Mago Fuego', '0', '0', '0');
+INSERT INTO `custom_pvp_penalizations` VALUES ('64', 'Mago Escarcha', '-12', '0', '0');
+INSERT INTO `custom_pvp_penalizations` VALUES ('65', 'Paladin Sagrado', '-10', '-10', '0');
+INSERT INTO `custom_pvp_penalizations` VALUES ('66', 'Paladin Proteccion', '-5', '-5', '0');
+INSERT INTO `custom_pvp_penalizations` VALUES ('70', 'Paladin Retribucion', '-19', '0', '-5');
+INSERT INTO `custom_pvp_penalizations` VALUES ('71', 'Warrior Arma', '-19', '0', '-5');
+INSERT INTO `custom_pvp_penalizations` VALUES ('72', 'Warrior Furia', '-17', '0', '-5');
+INSERT INTO `custom_pvp_penalizations` VALUES ('73', 'Warrior Proteccion', '-5', '-5', '0');
+INSERT INTO `custom_pvp_penalizations` VALUES ('102', 'Druida Equilibrio', '0', '0', '0');
+INSERT INTO `custom_pvp_penalizations` VALUES ('103', 'Druida Feral', '-13', '0', '0');
+INSERT INTO `custom_pvp_penalizations` VALUES ('104', 'Druida Guardian', '-5', '-5', '0');
+INSERT INTO `custom_pvp_penalizations` VALUES ('105', 'Druida Restauracion', '-13', '0', '-15');
+INSERT INTO `custom_pvp_penalizations` VALUES ('250', 'Caballero de la Muerte Sangre', '-5', '-5', '0');
+INSERT INTO `custom_pvp_penalizations` VALUES ('251', 'Caballero de la Muerte Escarcha', '-19', '0', '-5');
+INSERT INTO `custom_pvp_penalizations` VALUES ('252', 'Caballero de la Muerte Profano', '0', '0', '-15');
+INSERT INTO `custom_pvp_penalizations` VALUES ('253', 'Hunter Bestia', '0', '0', '-15');
+INSERT INTO `custom_pvp_penalizations` VALUES ('254', 'Hunter Punteria', '-15', '0', '-30');
+INSERT INTO `custom_pvp_penalizations` VALUES ('255', 'Hunter Supervivencia', '-12', '0', '0');
+INSERT INTO `custom_pvp_penalizations` VALUES ('256', 'Sacerdote Disciplina', '-15', '-10', '0');
+INSERT INTO `custom_pvp_penalizations` VALUES ('257', 'Sacerdote Sagrado', '0', '-10', '0');
+INSERT INTO `custom_pvp_penalizations` VALUES ('258', 'Sacerdote Sombra', '-15', '0', '-20');
+INSERT INTO `custom_pvp_penalizations` VALUES ('259', 'Picaro Asesinato', '-15', '0', '-10');
+INSERT INTO `custom_pvp_penalizations` VALUES ('260', 'Picaro Forajido', '-10', '0', '-5');
+INSERT INTO `custom_pvp_penalizations` VALUES ('261', 'Picaro Sutileza', '-7', '0', '0');
+INSERT INTO `custom_pvp_penalizations` VALUES ('262', 'Shaman Elemental', '-13', '0', '0');
+INSERT INTO `custom_pvp_penalizations` VALUES ('263', 'Shaman Mejora', '-34', '0', '-5');
+INSERT INTO `custom_pvp_penalizations` VALUES ('264', 'Shaman Restauracion', '-13', '0', '-20');
+INSERT INTO `custom_pvp_penalizations` VALUES ('265', 'Brujo Afliccion', '-20', '0', '-30');
+INSERT INTO `custom_pvp_penalizations` VALUES ('266', 'Brujo Demonologia', '0', '0', '0');
+INSERT INTO `custom_pvp_penalizations` VALUES ('267', 'Brujo Destruccion', '-10', '0', '-5');
+INSERT INTO `custom_pvp_penalizations` VALUES ('268', 'Monje Maestro Cervecero', '-5', '-5', '0');
+INSERT INTO `custom_pvp_penalizations` VALUES ('269', 'Monje Caminaviento', '-19', '0', '-5');
+INSERT INTO `custom_pvp_penalizations` VALUES ('270', 'Monje Tejedor de la Niebla', '-14', '-15', '0');
+INSERT INTO `custom_pvp_penalizations` VALUES ('577', 'Cazador de Demonio Destruccion', '-19', '0', '-5');
+INSERT INTO `custom_pvp_penalizations` VALUES ('581', 'Cazador de Demonio Venganza', '-5', '-5', '0');

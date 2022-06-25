@@ -1,0 +1,2 @@
+UPDATE `access_requirement` SET `level_min`='115' WHERE (`mapId`='960') AND (`difficulty`='1') AND (`dungeonId`='0');
+UPDATE `access_requirement` SET `level_min`='115' WHERE (`mapId`='960') AND (`difficulty`='2') AND (`dungeonId`='0');
