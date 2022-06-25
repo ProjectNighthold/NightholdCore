@@ -7,6 +7,7 @@ Project Nighthold Core
 * [Data Files](#data-files)
 * [Reporting issues](#reporting-issues)
 * [Submitting fixes](#submitting-fixes)
+* [Thanks](#thanks)
 * [Copyright](#copyright)
 
 ## Introduction
@@ -26,14 +27,19 @@ NightholdCore development is completely open source; community involvement is hi
 
 NightholdCore is Under GPL 3 License so is completly Open Source Code.
 
+
 ## Goals
 
-Our main goal is to create a public and free Emu, free of toxixity and focused on optimize the way to work.
+Our main goal is to create a public and free Emu, free of toxixity and focused on optimize the way to work,
+focus totally on stability, gameplay and community.
+
+Usually other projects constantly change things on the core and remake system leaving in disregard the
+gameplay part, we want to be different
 
 Sadly too much people work as dev but all alone, without a community to rely on and share knowledge.
 
-We dont have fear to use code from other public projects or projects based on GNU Licenced Code,
-always giving the thanks to the proper dev or team.
+We dont have fear to use code from other public projects or projects based on GNU or GPL Licenced Code,
+always giving the thanks to the proper dev or team that made them.
 
 
 ## Requirements
@@ -46,14 +52,14 @@ Software requirements will be posted soon on our wiki so all can access to it.
 
 ## Install
 
-Detailed installation guides are available in the [wiki](https://www.trinitycore.info/display/tc/Installation+Guide) for
+Detailed installation guides are available in the [wiki](https://) for
 Windows, Linux and macOS.
 
 
 ## Data Files
 
 This core has been optimized for DBC/vmap/map/mmaps files from UWoW and are not provided as part of this source code package, but we soon will
-put a link for a repo that has the currend files and we soon will fix the extractors so you can get them too.
+put a link to a repo that has the current files and we soon will fix the extractors so you can get them too manually.
 
 
 ## Reporting issues
@@ -73,6 +79,10 @@ reports are wasteful and are subject to deletion.
 Fixes are submitted as pull requests via Github. For more information on how to
 properly submit a pull request, read the [how-to: maintain a remote fork](https://).
 
+
+## Thanks
+
+Read this file for a extensive list of thanks [THANKS](THANKS).
 
 ## Copyright
 
