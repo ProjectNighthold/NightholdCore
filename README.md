@@ -1,14 +1,16 @@
 Project Nighthold Core
 
-* [Introduction](#introduction)
-* [Our Goals](#Goals)
-* [Requirements](#requirements)
-* [Install](#install)
-* [Data Files](#data-files)
-* [Reporting issues](#reporting-issues)
-* [Submitting fixes](#submitting-fixes)
+* [Introduction to Nighthold](#introduction)
+* [Our Project Goals](#Goals)
+* [State of the Core and DB](#State)
+* [Work yet to do](#TODO)
+* [System Requirements](#requirements)
+* [How to Install](#install)
+* [About Data Files & Extractors](#data-files)
+* [Reporting bugs & issues](#reporting-issues)
+* [Submitting fixes or contributions](#submitting-fixes)
 * [Thanks](#thanks)
-* [Copyright](#copyright)
+* [Licence and Copyright](#copyright)
 
 ## Introduction
 
@@ -40,6 +42,16 @@ Sadly too much people work as dev but all alone, without a community to rely on 
 
 We dont have fear to use code from other public projects or projects based on GNU or GPL Licenced Code,
 always giving the thanks to the proper dev or team that made them.
+
+
+## State
+
+Soon we will put a link so you can see the current state of development of the emu and db.
+
+
+## TODO
+
+Soon we will put a link so you can see the the list of main things to fix or you can contribute.
 
 
 ## Requirements
