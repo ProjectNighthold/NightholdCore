@@ -16,6 +16,7 @@
  *###############################################################################
  */
 
+
 #include "Common.h"
 #include "ObjectMgr.h"
 #include "World.h"
@@ -834,7 +835,7 @@ bool ChatHandler::ShowHelpForCommand(std::vector<ChatCommand> const& table, cons
             if (!table[i].Help.empty())
                 SendSysMessage(table[i].Help.c_str());
 
-            if (table[i].ChildCommands)
+            if (!table[i].ChildCommands.empty())
                 if (ShowHelpForSubCommands(table[i].ChildCommands, table[i].Name, subcmd ? subcmd : ""))
                     return true;
 
