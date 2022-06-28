@@ -157,32 +157,47 @@ class spell_summon_darnel_q26800 : public AuraScript
     }
 };
 
-class player_undead_start_zone : public PlayerScript
+enum loginUndead
 {
-    public:
-        player_undead_start_zone() : PlayerScript("player_undead_start_zone") {} 
-        
-       void OnLogin(Player* player, bool firstLogin) override
+    SPELL_RIGOR_MORTIS = 73523,
+    QUEST_FRESH_OUT_OF_THE_GRAVE = 24959,
+    SPELL_VALKYR_RESURRECTION = 73524
+};
+
+class first_login_undead : public PlayerScript
+{
+public:
+    first_login_undead() : PlayerScript("first_login_undead") { }
+
+    void OnLogin(Player* player)
     {
-           if (!player || player->isGameMaster())
-               return;
+        if (player->getRace() == RACE_UNDEAD_PLAYER && player->GetQuestStatus(QUEST_FRESH_OUT_OF_THE_GRAVE) == QUEST_STATE_NONE)
+        {
+            player->AddAura(SPELL_RIGOR_MORTIS, player);
+        }
+    }
+};
 
-           if (player->getRace() == RACE_UNDEAD_PLAYER)
-           {
-               player->CastSpell(player, 73523); //spell fake death
-           }
+class npc_agatha : public CreatureScript
+{
+public:
+    npc_agatha() : CreatureScript("npc_agatha") { }
 
-           if (player->hasQuest(24959)) 
-           {
-               player->CastSpell(player, 73524); //spell revivir
-               player->RemoveAurasDueToSpell(73523); //spell fake death
-           }
+    bool OnQuestAccept(Player* player, Creature* /*creature*/, Quest const* quest) override
+    {
+        if (quest->GetQuestId() == QUEST_FRESH_OUT_OF_THE_GRAVE)
+        {
+            player->CastSpell(player, SPELL_VALKYR_RESURRECTION);
+            player->RemoveAura(SPELL_RIGOR_MORTIS);
+        }
+        return true;
     }
 };
 
 void AddSC_tirisfal_glades()
 {
-    new player_undead_start_zone();
+    new first_login_undead();
+    new npc_agatha();
     RegisterCreatureAI(npc_darnel_q26800);
     RegisterCreatureAI(npc_scarlet_corpse_q26800);
     RegisterCreatureAI(npc_deathguard_saltain);
